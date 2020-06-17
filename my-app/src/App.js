@@ -1,13 +1,12 @@
 import React, {component} from 'react';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
-import Hello from './Hello';
-
+import './App.css'
+import Main from './Main';
 
 const App = () => {
   return (
     <React.Fragment>
-    <p>hello ~</p>
-      <Hello />
+      <Main />
     </React.Fragment>
   )
 }

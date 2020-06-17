@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  width: 100%;
+}
+
+.nav {
+  background: #f3f3f3;
+  padding: 10px;
+  width: 150px;
+}
+
+.nav li {
+  padding-top: 10px;
+}
+
+.content {
+    border-left: 1px solid #ccc;
+    min-height: 100vh;
+    padding: 10px;
+    width: calc(100% - 150px);
+}
+
+.content li {
+  padding-top: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.grid .grid-col {
+  padding: 10px;
+}
+
+.grid .grid-col a {
+  display: block;
+  width: 200px;
+}
+
+.grid .grid-col a img {
+  background-color: #f3f3f3;
+  display: block;
+  min-height: 100px;
+  margin-bottom: 5px;
+}
