@@ -1,28 +1,36 @@
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
+import styled from 'styled-components';
+import './Todo.css'
 
-
-const TodoList = () => {
-  const todosList = [
-    {id: 0, title: 'Task00', isDone: false},
-    {id: 1, title: 'Task01', isDone: false},
-    {id: 2, title: 'Task02', isDone: false}
-  ]
-  
-  const [todos, setTodos] = useState(todosList);
+const TodoList = (props) => {
+  const [todos, setTodos] = useState(props.todosList);
 
   const [task, setTask] = useState('')
 
-  const handleRemoveTask = (index) => {
+  const [Checkbox, setCheckbox] = useState('')
+
+  const handleRemoveTask = (id) => {
     const newTodos = [...todos]
-    newTodos.splice(index, 1)
+
+    newTodos.filter((row, index) => {
+      if(row.id === id){
+        newTodos.splice(index, 1)
+      }
+      return false;
+    });
     setTodos(newTodos)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if(task === '') return
-
-    setTodos(todos => [...todos, {title: task, isDone: false}])
+    
+    const LatestTodo = todos.reduce((a, b) => (a.id > b.id ? a : b));
+    const LatestTodoId = LatestTodo.id+1;
+    setTodos(todos => [
+      ...todos,
+      {id: LatestTodoId, title: task, isDone: false}
+    ])
     setTask('')
   }
 
@@ -30,35 +38,85 @@ const TodoList = () => {
     setTask(event.target.value)
   }
   
-  const Tasks = todos.map((todo, index) => {
-    return (
-    <li key={index} className={todo.isDone ? "active" : ""}>
-      {todo.title}
-      <span onClick={() => handleRemoveTask(index)}>[x]</span>
-    </li>
-    );
-  });
+  const handleToggleCheckbox = useCallback((id) => {
+      todos.filter((row, index) => {
+        if(row.id === id){
+          //初期化
+          setCheckbox(row['isDone']);
+
+          todos[index]['isDone'] = !todos[index]['isDone']
+          setCheckbox(!Checkbox)
+        }
+        return false;
+      });
+      setTodos(todos)
+    },
+    [setTodos, todos, setCheckbox, Checkbox]
+  );
+
+  const Tasks = () => {
+    return todos.map((todo) => {
+      return (
+      <li
+        key={todo.id}
+        className={todo.isDone ? "active" : ""}>
+        <input
+          type="checkbox"
+          checked={todo.isDone}
+          onChange={() => handleToggleCheckbox(todo.id)} /> 
+        {todo.title}
+        <span
+          onClick={() => handleRemoveTask(todo.id)}>[x]</span>
+      </li>
+      );
+    });
+  }
+
 
   return (
     <>
       <form onSubmit={handleSubmit}>
-        Add Task: <input value={task} placeholder="Add New Task" onChange={handleNewTask} />
-        <input type="submit" value="submit" />
+        Add Task: 
+        <input
+          value={task}
+          placeholder="Add New Task"
+          onChange={handleNewTask} />
+        <input
+          type="submit"
+          value="submit" />
       </form>
-      <ul>
-        {Tasks}
-      </ul>
+        <ul>
+          <Tasks />
+        </ul> 
     </>
   );
 }
 
-const Todo = () => {
+const Todo = (props) => {
   return (
     <div>
       <h1>todo app</h1>
-      <TodoList />
+      <TaskStyle>
+          <TodoList todosList={props.todosList} />
+      </TaskStyle>
     </div>
   );
 }
+
+const TaskStyle = styled.div.attrs({ className: 'task-wrap' })
+`{
+  ul {
+    li {
+      color: blue;
+      &:hover {
+        color: red;
+      }
+      &.active {
+        text-decoration: line-through;
+      }
+    }
+  }
+}`;
+
 
 export default Todo;
