@@ -44,20 +44,20 @@ const TodoList = (props) => {
           setCheckbox(row['isDone']);
 
           todos[index]['isDone'] = !todos[index]['isDone']
-          setCheckbox(!Checkbox)
+          setCheckbox(!checkboxState)
         }
         return false;
       });
-      setTodos(todos)
+      // setTodos(todos)
     },
-    [setTodos, todos, setCheckbox, Checkbox]
+    [setTodos, todos, setCheckbox, checkboxState]
   );
 
   const Tasks = () => {
     return todos.map((todo) => {
       return (
       <li
-        key={todo.id}
+        key={todo.id.toString()}
         className={todo.isDone ? "active" : ""}>
         <input
           type="checkbox"
