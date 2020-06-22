@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react';
 import styled from 'styled-components';
+import { v4 as uuid } from 'uuid';
 import './Todo.css'
 
 const TodoList = (props) => {
@@ -25,11 +26,9 @@ const TodoList = (props) => {
     event.preventDefault()
     if(task === '') return
     
-    const LatestTodo = todos.reduce((a, b) => (a.id > b.id ? a : b));
-    const LatestTodoId = LatestTodo.id+1;
     setTodos(todos => [
       ...todos,
-      {id: LatestTodoId, title: task, isDone: false}
+      {id:  uuid(), title: task, isDone: false}
     ])
     setTask('')
   }
