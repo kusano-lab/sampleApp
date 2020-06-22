@@ -56,9 +56,7 @@ const TodoList = (props) => {
   const Tasks = () => {
     return todos.map((todo) => {
       return (
-      <li
-        key={todo.id.toString()}
-        className={todo.isDone ? "active" : ""}>
+      <TaskLiStyle key={todo.id.toString()} todo={todo}>
         <input
           type="checkbox"
           checked={todo.isDone}
@@ -66,7 +64,7 @@ const TodoList = (props) => {
         {todo.title}
         <span
           onClick={() => handleRemoveTask(todo.id)}>[x]</span>
-      </li>
+      </TaskLiStyle>
       );
     });
   }
@@ -105,15 +103,26 @@ const Todo = (props) => {
 const TaskStyle = styled.div.attrs({ className: 'task-wrap' })
 `{
   ul {
-    li {
-      color: blue;
-      &:hover {
-        color: red;
-      }
-      &.active {
-        text-decoration: line-through;
-      }
-    }
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+}`;
+
+const TaskLiStyle = styled.li.attrs(props => ({
+  className: props.todo.isDone ? "active" : ""
+}))
+`{
+  color: blue;
+  &:first-child {
+    padding-top: 0;
+  }
+  &:hover {
+    color: red;
+  }
+  &.active {
+    text-decoration: line-through;
   }
 }`;
 
