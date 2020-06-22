@@ -13,8 +13,8 @@ const TodoList = (props) => {
   const handleRemoveTask = (id) => {
     const newTodos = [...todos]
 
-    newTodos.filter((row, index) => {
-      if(row.id === id){
+    newTodos.filter((todo, index) => {
+      if(todo.id === id){
         newTodos.splice(index, 1)
       }
       return false;
@@ -38,10 +38,10 @@ const TodoList = (props) => {
   }
   
   const handleToggleCheckbox = useCallback((id) => {
-      todos.filter((row, index) => {
-        if(row.id === id){
+      todos.filter((todo, index) => {
+        if(todo.id === id){
           //初期化
-          setCheckbox(row['isDone']);
+          setCheckbox(todo['isDone']);
 
           todos[index]['isDone'] = !todos[index]['isDone']
           setCheckbox(!checkboxState)
