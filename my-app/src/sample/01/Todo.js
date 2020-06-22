@@ -8,7 +8,7 @@ const TodoList = (props) => {
 
   const [task, setTask] = useState('')
 
-  const [Checkbox, setCheckbox] = useState('')
+  const [checkboxState, setCheckbox] = useState(false)
 
   const handleRemoveTask = (id) => {
     const newTodos = [...todos]
@@ -33,7 +33,7 @@ const TodoList = (props) => {
     setTask('')
   }
 
-  const handleNewTask = (event) => {
+  const handleOnChange = (event) => {
     setTask(event.target.value)
   }
   
@@ -79,7 +79,7 @@ const TodoList = (props) => {
         <input
           value={task}
           placeholder="Add New Task"
-          onChange={handleNewTask} />
+          onChange={handleOnChange} />
         <input
           type="submit"
           value="submit" />
