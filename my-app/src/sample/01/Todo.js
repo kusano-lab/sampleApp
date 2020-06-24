@@ -17,7 +17,6 @@ const TodoList = (props) => {
       if(todo.id === id){
         newTodos.splice(index, 1)
       }
-      return false;
     });
     setTodos(newTodos)
   }
@@ -39,16 +38,14 @@ const TodoList = (props) => {
   
   const handleToggleCheckbox = useCallback((id) => {
       todos.forEach((todo, index) => {
-        if(todo.id === id){
+        if(todo.id == id){
           //初期化
           setCheckbox(todo['isDone']);
 
           todos[index]['isDone'] = !todos[index]['isDone']
           setCheckbox(!checkboxState)
         }
-        return false;
       });
-      // setTodos(todos)
     },
     [setTodos, todos, setCheckbox, checkboxState]
   );
