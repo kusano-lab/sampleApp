@@ -42,7 +42,13 @@ const TodoList = (props) => {
           //初期化
           setCheckbox(todo['isDone']);
 
-          todos[index]['isDone'] = !todos[index]['isDone']
+          setTodos(prevTodos => prevTodos.map(prevTodo => {
+            if(prevTodo['id'] === todo.id) {
+              return {...prevTodo, isDone: !prevTodo['isDone']};
+            }
+            return prevTodo;
+          }))
+
           setCheckbox(!checkboxState)
         }
       });
