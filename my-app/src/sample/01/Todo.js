@@ -104,19 +104,19 @@ const Todo = (props) => {
 }
 
 const TaskStyle = styled.div.attrs({ className: 'task-wrap' })
-`{
+`
   ul {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 20px;
     padding: 20px;
   }
-}`;
+`;
 
 const TaskLiStyle = styled.li.attrs(props => ({
   className: props.todo.isDone ? "active" : ""
 }))
-`{
+`
   color: blue;
   &:first-child {
     padding-top: 0;
@@ -127,7 +127,7 @@ const TaskLiStyle = styled.li.attrs(props => ({
   &.active {
     text-decoration: line-through;
   }
-}`;
+`;
 
 
 export default Todo;
