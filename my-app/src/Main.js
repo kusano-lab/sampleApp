@@ -3,6 +3,8 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import './Main.css'
 import Todo from './sample/01/Todo'
+import Countup from './sample/02/Countup'
+import Timer from './sample/02/Timer'
 
 const Sample01 = () => {
   //DBなどからデータを取得する。仮で直書き
@@ -15,6 +17,16 @@ const Sample01 = () => {
   return (
     <Todo todosList={todosList} />
   );
+}
+
+const Sample02 = () => {
+  return (
+    <>
+      <Countup />
+      <hr />
+      <Timer />
+    </>
+  )
 }
 
 // const HelloA = () => {
@@ -42,12 +54,14 @@ const Main = () => {
           <ul>
             <li><Link to="/">top</Link></li>
             <li><Link to="/sample01">todo app</Link></li>
+            <li><Link to="/sample02">Count/Timer app</Link></li>
             {/* <li><Link to="/hello-a">HelloA</Link></li> */}
           </ul>
         </div>
         <div className="content">
           <Route exact path="/" component={Top} />
           <Route exact path="/sample01" component={Sample01} />
+          <Route exact path="/sample02" component={Sample02} />
           {/* <Route path="/hello-a" component={HelloA} /> */}
         </div>
       </div>
