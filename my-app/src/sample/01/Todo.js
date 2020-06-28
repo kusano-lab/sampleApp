@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import styled from 'styled-components';
 import { v4 as uuid } from 'uuid';
 import './Todo.css'
@@ -9,6 +9,17 @@ const TodoList = (props) => {
   const [task, setTask] = useState('')
 
   const [checkboxState, setCheckbox] = useState(false)
+
+  useEffect(() => {
+    console.log("useEffect! first only!!");
+    //DBから取得
+  },[]);
+
+  useEffect(() => {
+    console.log("save todos!!!");
+    //DBに保存
+  },[todos]);
+
 
   const handleRemoveTask = (id) => {
     const newTodos = [...todos]
