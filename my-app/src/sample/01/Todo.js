@@ -49,7 +49,7 @@ const TodoList = (props) => {
   
   const handleToggleCheckbox = useCallback((id) => {
       todos.forEach((todo, index) => {
-        if(todo.id == id){
+        if(todo.id === id){
           //初期化
           setCheckbox(todo['isDone']);
 
