@@ -6,6 +6,7 @@ import Todo from './sample/01/Todo'
 import Countup from './sample/02/Countup'
 import Timer from './sample/02/Timer'
 import CountupWithRedux from './sample/03/Countup'
+import TimerWithRedux from './sample/03/Timer'
 
 const Sample01 = () => {
   //DBなどからデータを取得する。仮で直書き
@@ -34,6 +35,8 @@ const Sample03 = () => {
   return (
     <>
       <CountupWithRedux />
+      <hr />
+      <TimerWithRedux />
     </>
   )
 }
