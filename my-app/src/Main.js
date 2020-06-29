@@ -5,6 +5,7 @@ import './Main.css'
 import Todo from './sample/01/Todo'
 import Countup from './sample/02/Countup'
 import Timer from './sample/02/Timer'
+import CountupWithRedux from './sample/03/Countup'
 
 const Sample01 = () => {
   //DBなどからデータを取得する。仮で直書き
@@ -25,6 +26,14 @@ const Sample02 = () => {
       <Countup />
       <hr />
       <Timer />
+    </>
+  )
+}
+
+const Sample03 = () => {
+  return (
+    <>
+      <CountupWithRedux />
     </>
   )
 }
@@ -55,6 +64,7 @@ const Main = () => {
             <li><Link to="/">top</Link></li>
             <li><Link to="/sample01">todo app</Link></li>
             <li><Link to="/sample02">Count/Timer app</Link></li>
+            <li><Link to="/sample03">Count/Timer redux app</Link></li>
             {/* <li><Link to="/hello-a">HelloA</Link></li> */}
           </ul>
         </div>
@@ -62,6 +72,7 @@ const Main = () => {
           <Route exact path="/" component={Top} />
           <Route exact path="/sample01" component={Sample01} />
           <Route exact path="/sample02" component={Sample02} />
+          <Route exact path="/sample03" component={Sample03} />
           {/* <Route path="/hello-a" component={HelloA} /> */}
         </div>
       </div>
