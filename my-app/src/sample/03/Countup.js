@@ -28,7 +28,7 @@ const reducer = (state, action) => {
   }
 }
 
-const CountupWithRedux = () => {
+const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
@@ -57,4 +57,4 @@ const ButtonWrap = styled.div`
   }
 `;
 
-export default CountupWithRedux;
+export default Counter;

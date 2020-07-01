@@ -1,12 +1,12 @@
 import React, {useEffect, useReducer} from 'react';
 import styled from 'styled-components';
 
-const TimerWithRedux = () => {
+const Timer = () => {
 
   const initialState = {
     timer: 0,
     timerId: null,
-    pouseSwitch: false
+    isSwitch: false
   }
 
   const COUNTUP = "COUNTUP";
@@ -18,12 +18,12 @@ const TimerWithRedux = () => {
       case COUNTUP:
         return {
           timer: state.timer + 1,
-          pouseSwitch: false
+          isSwitch: false
         }
       case POUSE:
         return {
           timer: state.timer,
-          pouseSwitch: true
+          isSwitch: true
         }
       default:
         break;
@@ -33,7 +33,7 @@ const TimerWithRedux = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    if(state.pouseSwitch) return;
+    if(state.isSwitch) return;
 
     state.timerId = setTimeout(() => {
       dispatch({type: "COUNTUP"})
@@ -45,8 +45,8 @@ const TimerWithRedux = () => {
       timer!
       <p>{state.timer}</p>
       <ButtonWrap>
-        <button className={state.pouseSwitch? "active": ""} onClick={() => state.pouseSwitch && dispatch({type: "COUNTUP"})}>start</button>
-        <button className={state.pouseSwitch? "": "active"} onClick={() => !state.pouseSwitch && dispatch({type: "POUSE"})}>stop</button>
+        <button className={state.isSwitch? "active": ""} onClick={() => state.isSwitch && dispatch({type: "COUNTUP"})}>start</button>
+        <button className={state.isSwitch? "": "active"} onClick={() => !state.isSwitch && dispatch({type: "POUSE"})}>stop</button>
       </ButtonWrap>
     </div>
   )
@@ -69,4 +69,4 @@ const ButtonWrap = styled.div`
   }
 `;
 
-export default TimerWithRedux;
+export default Timer;

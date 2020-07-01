@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 
-const Countup = () => {
+const Counter = () => {
   const [count, setCount] = useState(0);
 
   return (
@@ -30,4 +30,4 @@ const ButtonWrap = styled.div`
   }
 `;
 
-export default Countup;
+export default Counter;
