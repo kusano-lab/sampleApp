@@ -45,8 +45,17 @@ const Timer = () => {
       timer!
       <p>{state.timer}</p>
       <ButtonWrap>
-        <button className={state.isSwitch? "active": ""} onClick={() => state.isSwitch && dispatch({type: "COUNTUP"})}>start</button>
-        <button className={state.isSwitch? "": "active"} onClick={() => !state.isSwitch && dispatch({type: "POUSE"})}>stop</button>
+
+        <StartButton
+          state={state}
+          onClick={() => state.isSwitch && dispatch({type: "COUNTUP"})}
+        >start</StartButton>
+
+        <StopButton
+          state={state}
+          onClick={() => !state.isSwitch && dispatch({type: "POUSE"})}
+        >stop</StopButton>
+
       </ButtonWrap>
     </div>
   )
@@ -55,18 +64,27 @@ const Timer = () => {
 const ButtonWrap = styled.div`
   color: red;
   display: flex;
-  button {
-    display: block;
-    margin-left: 10px;
-    opacity: .5;
-    padding: 5px 10px;
-    &:first-child {
-      margin-left: 0;
-    }
-    &.active {
-      opacity: 1;
-    }
+`;
+
+const Button = styled.button`
+  display: block;
+  margin-left: 10px;
+  opacity: .5;
+  padding: 5px 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &.active {
+    opacity: 1;
   }
 `;
+
+const StartButton = styled(Button).attrs(props => ({
+  className: props.state.isSwitch ? "active": ""
+}))``
+
+const StopButton = styled(Button).attrs(props => ({
+  className: props.state.isSwitch ? "": "active"
+}))``
 
 export default Timer;
