@@ -36,9 +36,17 @@ const Counter = () => {
       count up!
       <p>{state.count}</p>
       <ButtonWrap>
-        <button onClick={() => dispatch({type: "INCREMENT"})}>UP</button>
-        <button onClick={() => dispatch({type: "DECREMENT"})}>DOWN</button>
-        <button onClick={() => dispatch({type: "RESET"})}>RESET</button>
+        <Button
+          onClick={() => dispatch({type: "INCREMENT"})}
+        >UP</Button>
+
+        <Button
+          onClick={() => dispatch({type: "DECREMENT"})}
+        >DOWN</Button>
+        
+        <Button
+          onClick={() => dispatch({type: "RESET"})}
+        >RESET</Button>
       </ButtonWrap>
     </div>
   )
@@ -47,14 +55,15 @@ const Counter = () => {
 const ButtonWrap = styled.div`
   color: red;
   display: flex;
-  button {
-    display: block;
-    margin-left: 10px;
-    padding: 5px 10px;
-    &:first-child {
-      margin-left: 0;
-    }
-  }
 `;
+
+const Button = styled.button`
+  display: block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+`
 
 export default Counter;
