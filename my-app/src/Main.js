@@ -5,8 +5,8 @@ import './Main.css'
 import Todo from './sample/01/Todo'
 import Countup from './sample/02/Countup'
 import Timer from './sample/02/Timer'
-import {Counter as Counter03} from './sample/03/Countup'
-import {Timer as Timer03} from './sample/03/Timer'
+import {default as Counter03} from './sample/03/Countup'
+import {default as Timer03} from './sample/03/Timer'
 
 const Sample01 = () => {
   //DBなどからデータを取得する。仮で直書き
