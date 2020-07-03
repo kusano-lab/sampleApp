@@ -7,6 +7,7 @@ import Countup from './sample/02/Countup'
 import Timer from './sample/02/Timer'
 import {default as Counter03} from './sample/03/Countup'
 import {default as Timer03} from './sample/03/Timer'
+import {default as Todo4} from './sample/04/Todo'
 
 const Sample01 = () => {
   //DBなどからデータを取得する。仮で直書き
@@ -41,6 +42,14 @@ const Sample03 = () => {
   )
 }
 
+const Sample04 = () => {
+  return (
+    <>
+      <Todo4 />
+    </>
+  )
+}
+
 // const HelloA = () => {
 //   return (
 //     <div>
@@ -68,6 +77,7 @@ const Main = () => {
             <li><Link to="/sample01">todo app</Link></li>
             <li><Link to="/sample02">Count/Timer app</Link></li>
             <li><Link to="/sample03">Count/Timer redux app</Link></li>
+            <li><Link to="/sample04">todo app with redux toolkit</Link></li>
             {/* <li><Link to="/hello-a">HelloA</Link></li> */}
           </ul>
         </div>
@@ -76,6 +86,7 @@ const Main = () => {
           <Route exact path="/sample01" component={Sample01} />
           <Route exact path="/sample02" component={Sample02} />
           <Route exact path="/sample03" component={Sample03} />
+          <Route exact path="/sample04" component={Sample04} />
           {/* <Route path="/hello-a" component={HelloA} /> */}
         </div>
       </div>
