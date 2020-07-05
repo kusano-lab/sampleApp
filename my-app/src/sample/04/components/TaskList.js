@@ -9,7 +9,7 @@ const TaskList = () => {
         <div>
             {
                 tasks.length <= 0 ? 'タスクは未登録です。' :
-                <ul className="task-list">
+                <ul>
                 { tasks.map(task => (
                         <TaskItem key={task.id} task={task} />
                 )) }

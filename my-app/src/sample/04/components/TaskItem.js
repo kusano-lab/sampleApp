@@ -13,7 +13,7 @@ const TaskItem = ({ task }) => {
                     onClick={() => dispatch(doneTask(task))}
                     defaultChecked={ task.done }
                 />
-                <span className="checkbox-label">{ task.title }</span>
+                <span>{ task.title }</span>
             </label>
             <button
                 onClick={() => dispatch(deleteTask(task))}
