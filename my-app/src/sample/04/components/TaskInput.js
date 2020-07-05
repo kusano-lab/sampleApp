@@ -12,8 +12,10 @@ const TaskInput = () => {
     }
  
     const handleSubmit = () => {
-        dispatch(addTask(inputTitle))
-        setInputTitle('')
+        if(inputTitle){
+            dispatch(addTask(inputTitle))
+            setInputTitle('')
+        }
     }
  
     return (
