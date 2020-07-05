@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "postcss-normalize": "^9.0.0",
+    "react-redux": "^7.2.0",
     "styled-components": "^5.1.1",
     "uuid": "^8.1.0"
   }
