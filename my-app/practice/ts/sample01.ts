@@ -152,23 +152,60 @@ const item1: item = {
 
 
 // Generics(ジェネリクス)
-interface GEN<T, U> {
+interface GEN<T, U> {  // T・・・alias
     item: T;
     price?: U;
 }
 const gen1: GEN<string, number> = {item: 'hello', price: 100};
 
 // デフォルトの型を追加する場合
-// interface GEN<T = string> {
-// }
+interface GEN2<T = string> {
+    item: T;
+}
 
-// 型を複数設定する場合
-// interface GEN<T extends string | number> {
-// }
+// 型を制限する場合
+interface GEN3<T extends string | number> {
+    item: T;
+}
+
+const gen2: GEN2<boolean> = {item: true}
+
+//error
+// const gen3: GEN3<boolean> = {item: true}
+
+
+function funcGen<T>(props: T) {
+    return { item: props };
+}
+
+const funcGen2 = <T>(props: T) => ({ item: props });
+
+const funcGen3= <T>(args: T): T => args;
+
+const gen4 = funcGen<string | null>("hello!"); // 明示的に<string>を記述しなくても良い
+
+const gen5 = funcGen2(100);
+
+const gen6 = funcGen3("hello");
+
+
+interface Props {
+    price: number;
+}
+
+function funcGen4<T extends Props>(props: T) {
+    return { value: props.price };
+}
+
+const funcGen5 = <T extends Props>(props: T) => {
+    return { value: props.price };
+}
+
 
 
 import UER_DATA  = require('./sample.json');
 
+// 以下のimportの記述の場合は、esModuleInteropのオプションを設定する必要がある
 // import data from './sample.json';
 // compilerOptions: {
 //     "esModuleInterop": true
