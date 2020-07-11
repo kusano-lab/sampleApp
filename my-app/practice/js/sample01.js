@@ -39,3 +39,25 @@ const array5 = [1, 2]; // true
 // console.log(Array.isArray(array5));
 // console.log(array5 instanceof Array); // ← instanceofは継承しているオブジェクトを判定する
 
+// Q6
+// console.log(typeof x6 === 'undefined'); // true
+// console.log(x6 === 'undefined'); // not definded エラー
+
+// Q7
+let x7;
+// console.log(x7 === void 0); // void 0 → undefined / global変数
+// console.log(y7 === void 0); // not definded エラー
+
+// Q8
+const obj8 = {
+    key: 'aa',
+    key2: 'bb'
+}
+
+for(p in obj8) {
+    // console.log(`${p}: ${obj8[p]}`)
+}
+
+// Q9
+const array9 = ['a', 'b', 'c'];
+// console.log(array9.join(''));
