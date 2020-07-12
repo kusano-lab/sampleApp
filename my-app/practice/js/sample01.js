@@ -61,3 +61,91 @@ for(p in obj8) {
 // Q9
 const array9 = ['a', 'b', 'c'];
 // console.log(array9.join(''));
+
+
+// Q10
+// const x10 = 10;
+// y10 = 101;
+// console.log(x10);
+// console.log(y10);
+// delete x10; // 明示的に宣言しているのでdeleteできない
+// delete y10; // 暗黙的に定義されたglobal変数はdeleteできる
+// console.log(x10);
+// console.log(y10); // definedエラー
+
+// const f10 = () => {
+//     var z10 = 102;
+//     console.log(z10);
+//     delete z10; //deleteできない
+//     console.log(z10);
+// }
+// f10();
+
+// let color10 = ['red', 'blue', 'green'];
+// console.log(color10);
+// color10[1] = undefined;
+// console.log(color10);
+// delete color10[0]; //<1 empty item> 配列の要素数は変わらない
+// console.log(color10);
+
+// const Foo10 = () => {};
+// function Foo10(){}
+// Foo10.prototype.bar = 103;
+// console.log(Foo10);
+// let foo10 = new Foo10(); // [Function: Foo10]
+// console.log(foo10); // Foo10 {}
+// console.log(foo10.bar); // 103
+// delete foo10.bar;
+// console.log(foo10.bar); // 103
+// delete foo10.prototype.bar;
+// console.log(foo10.bar); // undefined or null
+
+
+// Q11
+let arr11 = [
+    { id: 1, name: 'item1' },
+    { id: 2, name: 'item2' },
+    { id: 4, name: 'item4' },
+    { id: 3, name: 'item3' }
+];
+
+// console.log(arr11);
+// console.log('----');
+
+arr11.sort((a, b) => {
+    return a.id > b.id;
+});
+// console.log(arr11);
+
+
+// Q12
+// const [a12=5, b12=7] = [1];
+// console.log(a12, b12);
+
+
+// Q13
+// const setUp = function(){
+//     let count = 0;
+//     return function(){
+//     return (count += 1);
+//     }
+// };
+
+// const next = setUp();
+// console.log(next());//1
+// console.log(next());//2
+// console.log(next());//3
+
+function* setUp2() {
+    let cnt = 0;
+    while(cnt < 3){
+        yield cnt;
+        cnt++;
+    }
+}
+
+const func13 = setUp2();
+
+// console.log(func13.next())
+// console.log(func13.next())
+// console.log(func13.next())
