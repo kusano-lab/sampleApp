@@ -149,3 +149,40 @@ const func13 = setUp2();
 // console.log(func13.next())
 // console.log(func13.next())
 // console.log(func13.next())
+
+
+// Q14
+// func14(1, 2, 3)
+
+// const func14 = (...arg) => {
+//     return arg;
+// }
+
+// NG アロー関数は自身でargumentsオブジェクトを持たない
+// const func14 = () => {
+//     return Array.from(arguments);
+// }
+
+// function func14(){
+//     return Array.from(arguments);
+// }
+
+// console.log(func14(1, 2, 3));
+
+
+// Q15
+const arr15 = ['a1','a2','a3','a4','a5'];
+// console.log(arr15.splice(0, 2, 'red', 'green', 'yellow'));
+// console.log(arr15);
+
+
+// Q16
+const arr16 = ['a1','a2','a3','a4','a5'];
+const newarr16 = arr16.slice(1, 4);
+// console.log(newarr16);
+// console.log(arr16);
+
+
+// Q17
+const arr17 = ['a1','a2','a3','a4','a5'];
+// console.log(arr17.join('/').split('/'));
