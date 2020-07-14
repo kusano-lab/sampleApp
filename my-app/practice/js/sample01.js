@@ -186,3 +186,28 @@ const newarr16 = arr16.slice(1, 4);
 // Q17
 const arr17 = ['a1','a2','a3','a4','a5'];
 // console.log(arr17.join('/').split('/'));
+
+
+// Q18
+const arr18 = ['おはよう','こんにちは','おやすみなさい'];
+const greeting18 = arr18[Math.floor(Math.random() * arr18.length)];
+// console.log(greeting18)
+
+
+// Q19
+const obj19 = Object.create({}, {p: {value: 1}})
+// console.log(obj19.p)
+
+
+// Q20
+function Who20(name){
+    this.name = name;
+};
+Who20.prototype.getName = function(){
+    console.log('myname is '+ this.name);
+}
+let o20 = new Who20('taro');
+o20.getName();
+
+
+
