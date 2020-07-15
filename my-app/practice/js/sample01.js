@@ -204,10 +204,47 @@ function Who20(name){
     this.name = name;
 };
 Who20.prototype.getName = function(){
-    console.log('myname is '+ this.name);
+    // console.log('myname is '+ this.name);
 }
 let o20 = new Who20('taro');
 o20.getName();
 
 
+// Q21
+let arr21 = ['e','a','k','B','c'];
+// console.log(arr21.sort());
 
+
+// Q22
+// console.log(arr21.sort( (a, b) => a.toUpperCase() > b.toUpperCase() ));
+
+
+// Q23
+const arr23 = [20,100,3,35,0];
+// console.log(arr23.sort((a, b) => (b - a)));
+
+
+// Q24
+let a24 = "10";
+// console.log(typeof a24);
+
+a24 = parseInt(a24, 10)
+// console.log(typeof a24);
+
+a24 = a24.toString();
+// console.log(typeof a24);
+
+
+// Q25
+// const func25 = (x, y) => {
+//     return x + y;
+// }
+// const func25 = x => y => x + y
+
+const func25 = (x, y) => {
+    if(typeof y === 'undefined') return y => x + y;
+    return x + y;
+}
+
+// console.log(func25(1, 2));
+// console.log(func25(1)(2));
