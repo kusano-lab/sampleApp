@@ -248,3 +248,30 @@ const func25 = (x, y) => {
 
 // console.log(func25(1, 2));
 // console.log(func25(1)(2));
+
+
+// Q26
+const Factory = (name) => {
+    const getName = () => name;
+
+    return {
+        introduce : () => console.log(getName())
+    }
+}
+
+var f26 = Factory('hello');
+// f26.introduce()
+
+
+// Q27
+let sayHi27 = (name) => `hello! ${name ? name : ''}`;
+// console.log(sayHi27('taro'));
+// console.log(sayHi27());
+// console.log(sayHi27.apply(null, ['taro'])); //関数呼び出し
+
+let greeting27 = {
+    sayHi: (name) => `hello! ${name ? name : ''}`
+}
+// console.log(greeting27.sayHi('jiro'))
+// console.log(greeting27.sayHi.apply(greeting27, ['jiro'])) //メソッド呼び出し
+// console.log(greeting27.sayHi.apply(greeting27))
