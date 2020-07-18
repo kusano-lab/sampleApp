@@ -275,3 +275,44 @@ let greeting27 = {
 // console.log(greeting27.sayHi('jiro'))
 // console.log(greeting27.sayHi.apply(greeting27, ['jiro'])) //メソッド呼び出し
 // console.log(greeting27.sayHi.apply(greeting27))
+
+
+// Q28
+let obj28 = {x : 2, y: 3};
+// console.log(Object.preventExtensions(obj28));
+// console.log(Object.isExtensible(obj28));
+// obj28['z'] = 5;
+
+// console.log(Object.keys(obj28));
+
+// console.table(obj28);
+
+
+// Q29
+let obj29 = Object.create(Object.prototype);
+let obj292 = {};
+
+// console.log(typeof obj29);
+// console.log(typeof obj292);
+
+
+// Q30
+let obj30 = Object.create(Object.prototype, {
+    x: {value: 2, writable: true, enumerable: true, configurable: true},
+    y: {value: 3, writable: true, enumerable: true, configurable: true}
+});
+// console.log(obj30);
+
+
+// Q31
+let obj31 = { x: 2, y: 3 }
+// console.log(Object.getOwnPropertyDescriptor(obj31, 'x'));
+// console.log(Object.getOwnPropertyDescriptors(obj31));
+
+
+// Q32
+function f32(){
+    console.log(arguments.length)
+    console.log(arguments[0])
+}
+// f32(2, 3, 4, 7)
