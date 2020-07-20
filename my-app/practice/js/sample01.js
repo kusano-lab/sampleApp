@@ -316,3 +316,40 @@ function f32(){
     console.log(arguments[0])
 }
 // f32(2, 3, 4, 7)
+
+
+// Q33
+let arr33 = ['2','23','0','16'];
+// console.log(arr33)
+arr33.sort((a, b) => (a - b))
+// console.log(arr33)
+Object.freeze(arr33)
+// arr33.sort((a, b) => (a + b)) // error
+// console.log(arr33)
+
+
+// Q34
+let arr34 = [3,4,5];
+
+// arr34a = arr34.slice(0, arr34.length)
+// arr34a = arr34.map(ele => ele);
+// arr34a = [].concat(arr34)
+// console.log(arr34)
+// console.log(arr34a)
+// arr34a[0] = 123
+// arr34a.push(678)
+// console.log(arr34)
+// console.log(arr34a)
+
+
+// Q35
+const _err35 = function(message) {
+    throw new Error(message)
+}
+
+const getSum35 = (a = _err35('a is not desined'), b = _err35('b is not desined')) => a + b
+
+// console.log(getSum35(10));
+// console.log(getSum35(undefined, 10));
+// console.log(getSum35(20, 10));
+
