@@ -343,9 +343,7 @@ let arr34 = [3,4,5];
 
 
 // Q35
-const _err35 = function(message) {
-    throw new Error(message)
-}
+const _err35 = message => {throw new Error(message)}
 
 const getSum35 = (a = _err35('a is not desined'), b = _err35('b is not desined')) => a + b
 
@@ -353,3 +351,39 @@ const getSum35 = (a = _err35('a is not desined'), b = _err35('b is not desined')
 // console.log(getSum35(undefined, 10));
 // console.log(getSum35(20, 10));
 
+
+// Q38
+// const list38 = [...document.querySelectorAll('div')];
+// console.log(list38)
+
+
+// Q39
+var arr39 = ['f','z','o','x','k','a'];
+// for(var i of arr39) console.log(i);
+// arr39.forEach(x => console.log(x));
+
+
+// Q40
+var arr40 = ['f','z','o'];
+// var eArr40 = arr40[Symbol.iterator]();
+// console.log(eArr40.next().value)
+// console.log(eArr40.next().value)
+// console.log(eArr40.next().value)
+// console.log(eArr40.next().value)
+
+
+// Q41
+var arr41 = ['a', 'b', 'c', 'd', 'e'];
+arr41.splice(2, 0, 'add')
+// arr41[2] = 'add'
+// console.log(arr41);
+
+
+// Q42
+var o42 = Object.create(Object.prototype);
+// console.log(o42);
+
+
+// Q43
+var obj43 = Object.create({}, {p :{value: 43}});
+// console.log(obj43.p);
