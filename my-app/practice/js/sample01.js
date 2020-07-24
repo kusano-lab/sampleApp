@@ -387,3 +387,119 @@ var o42 = Object.create(Object.prototype);
 // Q43
 var obj43 = Object.create({}, {p :{value: 43}});
 // console.log(obj43.p);
+
+
+// Q44
+let n44 = 1234;
+// let s44 = String(n44); //null → 'null'
+let s44 = n44.toString(); //nullの場合エラー
+// console.log(typeof s44);
+// console.log(s44);
+
+let arr44 = [];
+for(var i=0; i<s44.length; i++){
+    arr44[i] = s44.charAt(i);
+}
+// let arr44 = [...s44];
+// let arr44 = Array.from(s44);
+// console.log(arr44);
+
+
+// Q45
+// [0, 1, 2, 3, 4].some(function(val, i) {
+//     if (val === 2) return true
+//     console.log(val);
+// });
+
+// const arr45 = [0, 1, 2, 3, 4];
+// for(var i=0; i<arr45.length; i++){
+//     if(arr45[i] == 2) return true;
+//     console.log(arr45[i]);
+// }
+
+
+// Q46
+// var Speaker = {
+//     say : function(wordsGetter){
+//         var words = wordsGetter();
+//         console.log(words);
+//     }
+// }
+
+// function Person(nickname){
+//     this.nickname = nickname;
+// }
+
+// Person.prototype.sayName = function(){
+//     // self = this;
+//     Speaker.say(function(){
+//         // return self.nickname;
+//         return this.nickname;
+//     }.bind(this));
+// }
+
+// var person = new Person('taro');
+// person.sayName();
+
+
+// class Person46 {
+//     constructor(nickname){
+//         this.nickname = nickname
+//     }
+
+//     get name() {
+//         return this.sayName();
+//     }
+
+//     sayName() {
+//         return this.nickname;
+//     }
+// }
+
+// const person46 = new Person46('jiro')
+// // console.log(person46.name)
+
+
+// Q47
+var array47 = [
+    {name: 'kenji', mail:'fafa@eee.com'},
+    {name: 'morita', mail: 'kkk@faf.com'}
+];
+
+// var array472 = [];
+// array47.forEach(function(Element, ind, array47){
+//     console.log(ind, Element, array47)
+//     for(var key in Element){
+//         console.log(key)
+//         if(key == 'mail'){
+//             array472.push(Element[key])
+//         }
+//     }
+// })
+
+// console.log(array472);
+
+// for (const [key, value] of Object.entries(array47)){
+//     console.log(`${key}: ${value}`)
+// }
+
+
+// Q48
+var p48 = [12, 5, 8, 130, 44]
+
+var r48 = p48.every((ele, id, array) => (ele >= 10)) //一つでも条件を満たさないとfalseを返す
+// console.log(r48)
+
+
+// Q49
+var a49 = [['one', 'info@fa'],['two', 'send@fafa'],['three', 'hoso@fafa']
+];
+
+const map49 = new Map(a49);
+// console.log(map49)
+// console.log(map49.get('two'))
+
+
+// Q50
+map49.set('four', 'fafa@eee')
+// console.log(map49)
