@@ -46,3 +46,49 @@ s54 = '漢字';
 // console.log(/(ヤッホー！){2,3}/.exec(s55))
 const s55 = '「ヤッホー?ヤッホー@」';
 // console.log(/(ヤッホー\W)+/.exec(s55))
+
+
+// Q56
+const s56 = '彼はありがとうと言った';
+// console.log(/彼は(ありがとう|こんにちは｜さようなら)と言った/.exec(s56)); // [ '彼はありがとうと言った', 'ありがとう', index: 0, input: '彼はありがとうと言った', groups: undefined ]
+// console.log(/ありがとう|こんにちは｜さようなら/.exec(s56)); // [ 'ありがとう', index: 2, input: '彼はありがとうと言った', groups: undefined ]
+
+
+// Q57
+const s57 = 'why';
+// console.log(/wh(en|ere|o|at|y)|How/.exec(s57));
+
+
+// Q58
+// const x58 = new Boolean(false)
+// console.log(x58)
+// if(x58){
+//     console.log("x58")
+// }
+
+// // false
+// console.log(Boolean(0));
+// console.log(Boolean(-0));
+// console.log(Boolean(false));
+// console.log(Boolean(''));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+
+// //true
+// console.log(Boolean(1789));
+// console.log(Boolean('false'));//'false'という文字列は真偽値プリミティブのfalseとは異なる
+
+// console.log(Boolean(Math));
+// console.log(Boolean(Array()));
+
+
+// Q59
+const v59 = new Boolean(false);
+// console.log(v59) //[Boolean: false]
+const v592 = new Boolean(v59);
+// console.log(v592) //[Boolean: true]
+
+
+// Q60
+console.log(undefined == null); //true
+console.log(undefined === null); //false
