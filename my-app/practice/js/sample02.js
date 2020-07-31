@@ -90,5 +90,45 @@ const v592 = new Boolean(v59);
 
 
 // Q60
-console.log(undefined == null); //true
-console.log(undefined === null); //false
+// console.log(undefined == null); //true
+// console.log(undefined === null); //false
+
+
+// Q61
+const ii61 = () => {
+    return (value) => {
+        console.log(`my: ${value}`)
+    }
+}
+
+const kk61 = ii61();
+// kk61('home');
+
+
+// Q62
+const now = new Date();
+const nowtime = `今${now.getHours()}時${now.getMinutes()}分${now.getSeconds()}秒`;
+// console.log(nowtime)
+
+
+// Q63
+const f63 = () => {
+    return {
+        first63: 1,
+        second63: 2,
+        third63: 3
+    }
+}
+
+const {first63, second63, third63} = f63();
+// console.log(f63())
+// console.log(first63, second63, third63)
+
+
+// Q65
+const s64 = 'abcdefg';
+// console.log(s64.includes('cd'));
+
+
+// Q66
+// console.log('repeat'.repeat(2))
