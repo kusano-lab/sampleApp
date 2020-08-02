@@ -132,3 +132,38 @@ const s64 = 'abcdefg';
 
 // Q66
 // console.log('repeat'.repeat(2))
+
+
+// Q67
+const c67 = [];
+for(let n of 'foo'){
+    c67.push(n)
+}
+// console.log(c67)
+
+
+// Q68
+const a68 = ['aaa', 'bbb']
+const Iterator68 = a68[Symbol.iterator]();
+// console.log(Iterator68.next());
+// console.log(Iterator68.next());
+// console.log(Iterator68.next());
+
+
+// Q69
+const a69 = [...'foo'];
+// console.log(a69)
+
+
+// Q70
+const [index70a, index70b, ...index70z] = 'aiueo';
+// console.log(index70a, index70b, index70z)
+
+
+// Q71
+const f71 = (f71a, f71b, ...f71z) => {
+    console.log('first', f71a)
+    console.log('second', f71b)
+    console.log('rest', f71z)
+}
+// f71(1,2,3,4,5)
