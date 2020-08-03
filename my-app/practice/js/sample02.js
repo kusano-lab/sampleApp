@@ -167,3 +167,50 @@ const f71 = (f71a, f71b, ...f71z) => {
     console.log('rest', f71z)
 }
 // f71(1,2,3,4,5)
+
+
+// Q72
+const b72 = [4, 5, 6]
+const a72 = [1, 2, 3, ...b72]
+// console.log(a72)
+
+
+// Q73
+// const foo73 = 'foo';
+// function foo73(){};
+// class Baz73{
+//     baz(){}
+// }
+// export {foo73, bar73, Baz73};
+
+// import {foo73, bar73, Baz73} from './module';
+// import {foo73 as poo73} from './module';
+// import * as from './moudle';
+
+
+// Q74
+// var obj74 = {foo: foo, bar: bar};
+// var obj74 = {foo, bar} //keyとvalueが同じ場合、省略化
+
+
+// Q75
+// 従来の書き方
+// var key = 'foo';
+// var obj = {};
+// obj[key] = 0;
+// obj[key + '_bar'] = 1;
+
+// ES2015の書き方
+var k75 = 'foo';
+var obj75 = {
+    [k75]: 0,
+    [k75 + '_bar']: 1
+}
+// console.log(obj75.foo, obj75.foo_bar)
+
+
+// Q76
+const f76 = () => {
+    return 'taro'
+}
+// console.log(`my name is ${f76()}`)
