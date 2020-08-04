@@ -214,3 +214,57 @@ const f76 = () => {
     return 'taro'
 }
 // console.log(`my name is ${f76()}`)
+
+
+// Q77
+let [a77, b77] = [1, 2];
+// console.log(a77, b77)
+
+
+// Q78
+// console.log(`line1
+// line2`)
+// console.log(`\
+// line1
+// line2\
+// `)
+
+
+// Q79
+{
+    const long = '30px';
+    const weight = '40px';
+    const tag = (strings, ...values) => {
+        // console.log(strings, values) //[ '身長', 'で体重', 'です' ] [ '30px', '40px' ]
+        return `m: ${values[0]}, p: ${values[1]}`;
+    }
+    let str = tag`身長${long}で体重${weight}です`; 
+    // console.log(str);
+
+    const tag2 = (arg) => {
+        // console.log(arg);
+    }
+    tag2`身長${long}で体重${weight}です`; 
+}
+
+
+// Q80
+{
+    const func = ({a, b}) => {
+        return a + b;
+    }
+    // console.log(func({a: 1, b: 4}))
+}
+
+
+// Q81
+{
+    let aa = [['a', 'b', 'c'], ['d', 'e', 'f']];
+    // console.log(aa);
+    aa = aa.map(a => {
+        return a.map(e => {
+            return `${e} san`;
+        })
+    })
+    // console.log(aa);
+}
