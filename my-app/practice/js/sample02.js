@@ -268,3 +268,78 @@ let [a77, b77] = [1, 2];
     })
     // console.log(aa);
 }
+
+
+// Q82
+{
+    // let aa = [1, 2, 3];
+    // let bb = [4, 5, 6];
+    // console.log('aa', aa) // aa [ 1, 2, 3 ]
+    // console.log('bb', bb) // bb [ 4, 5, 6 ]
+    // let cc = aa.forEach((a) => {
+    //     return a*2
+    // })
+    // console.log('aa', aa) // aa [ 1, 2, 3 ]
+    // console.log('cc', cc) // cc undefined
+
+    // let dd = bb.map((b) => {
+    //     return b*2
+    // })
+    // console.log('bb', bb) // bb [ 4, 5, 6 ]
+    // console.log('dd', dd) // dd [ 8, 10, 12 ]
+}
+
+
+// Q83 + Q84
+{
+    let obj = [{name: 'a'},{name: 'b'}]
+    let result = obj.map(e => `${e.name} san`)
+    // console.log(result)
+
+    let result2 = [];
+    obj.forEach(ele => {
+        // `${e.name} san`
+        for (var key in ele){
+            result2.push(`${ele[key]} san`)
+        }
+    })
+    // console.log(result2)
+}
+
+
+// Q85
+{   
+    const atom = {
+        value: 1,
+        addValue: function(value){
+            return atom.value + value;
+        }
+    }
+    // console.log(atom.addValue(atom.value))
+
+    // object-shrothand
+    const atom2 = {
+        value: 10,
+        addValue(value) {
+            return atom2.value + value;
+        }
+    }
+    // console.log(atom2.addValue(atom2.value))
+}
+
+
+// Q86
+{
+    function getKey(k){
+        return `a key named ${k}`;
+    }
+
+    const obj = {
+        id: 5,
+        name: 'taro',
+        [getKey('foo')]: true
+    }
+    // console.log(obj)
+    obj[getKey('enabled')] = true
+    // console.log(obj)
+}
