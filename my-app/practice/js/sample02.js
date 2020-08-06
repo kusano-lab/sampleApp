@@ -343,3 +343,62 @@ let [a77, b77] = [1, 2];
     obj[getKey('enabled')] = true
     // console.log(obj)
 }
+
+
+// Q87
+{
+    // let path = location.pathname
+    let path = "/ja/docs/Web/API/Location";
+    let [first, second, ...other] = path.substring(1).split('/')
+    // console.log(first, second, other)
+}
+
+
+// Q88
+{
+    const name = 'taro'
+    const age = 20
+    const obj = {
+        name: name,
+        age,
+    }
+
+    // console.log(obj.name, obj.age)
+}
+
+
+// Q89
+{
+    const arr = ['a', 'b', 'c']
+    const copyArr = [...arr]
+    // console.log(copyArr)
+} 
+
+
+// Q90
+{
+    // console.log(window)
+    // navigator/location/history/screen/frames/document/parent/top/selfs
+}
+
+
+// Q90
+{
+    function add (user){
+        const name = user.name;
+        const id = user.id;
+        return `${name} ${id}`;
+    }
+    // console.log(add({name: 'taro', id: 123}))
+
+    const add2 = user => {
+        const {name, id} = user
+        return `${name} ${id}`;
+    }
+    // console.log(add2({name: 'taro', id: 123}))
+
+    const add3 = ({name, id}) => {
+        return `${name} ${id}`;
+    }
+    // console.log(add3({name: 'taro', id: 123}))
+}
