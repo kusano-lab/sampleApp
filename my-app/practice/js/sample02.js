@@ -402,3 +402,78 @@ let [a77, b77] = [1, 2];
     }
     // console.log(add3({name: 'taro', id: 123}))
 }
+
+
+// Q91
+ {
+    var aaa = [['oo','oo1'], ['ll','ll2']];
+    aaa.forEach(aa => {
+        aa.filter((a, i) => {
+            // if(i === 0) console.log(a)
+        })
+    });
+ }
+
+
+ // Q92
+ {
+    // concat
+    // let aa = ['oo', 'll']
+    // let arr = []
+    // let bb = arr.concat(aa) //shallow copy
+    // bb[0] = 'kk'
+    // console.log(aa) // [ 'oo', 'll' ]
+    // console.log(bb) // [ 'kk', 'll' ]
+
+    // slice
+    // let aa = ['oo', 'll']
+    // let bb = aa.slice(0, aa.length) //shallow copy
+    // bb[0] = 'kk'
+    // console.log(aa) // [ 'oo', 'll' ]
+    // console.log(bb) // [ 'kk', 'll' ]
+
+    // let aa = ['oo', 'll']
+    // let bb = [...aa] //shallow copy
+    // bb[0] = 'kk'
+    // console.log(aa) // [ 'oo', 'll' ]
+    // console.log(bb) // [ 'kk', 'll' ]
+
+    //splice 破壊的メソッド
+    // let aa = ['oo', 'll']
+    // let bb = aa.splice(0, aa.length) //deep copy
+    // bb[0] = 'kk'
+    // console.log(aa) // [ ]
+    // console.log(bb) // [ 'kk', 'll' ]
+
+}
+
+
+// Q93
+{
+    let aa = ['oo', 'll'];
+    // let bb = [...aa]
+    let bb = aa.splice(0, aa.length, 'kk', 'jj')
+    // aa = ['kk', 'jj'];
+    // console.log(aa) // [ 'kk', 'jj' ]
+    // console.log(bb) // [ 'oo', 'll' ]
+}
+
+
+// Q94
+{
+    let aa = [1, 2, 3]
+    delete aa[1]
+    // console.log(aa) //[ 1, <1 empty item>, 3 ]
+
+    let bb = [1, 2, 3]
+    bb.splice(1, 1)
+    // console.log(bb) //[ 1, 3 ]
+}
+
+
+// Q95
+{
+    let text = 'key and value';
+    let t = text.match(/\w+/g)
+    // console.log(t)
+}
