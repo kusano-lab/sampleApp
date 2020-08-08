@@ -477,3 +477,72 @@ let [a77, b77] = [1, 2];
     let t = text.match(/\w+/g)
     // console.log(t)
 }
+
+
+// Q96
+{
+    let text = 'abc def ghi jkl';
+    text1 = text.replace(/(.)\s/g, ',$1')
+    // console.log(text1)
+
+    text2 = text.replace(/(.)\s/g, (m0, m1) => {
+        // console.log(m0, m1)
+        return ',' + m1
+    });
+    // console.log(text2)
+}
+
+
+// Q97
+{
+    let arr = ['aa','bb','cc','dd','11']
+    let last = arr.splice(arr.length-1, 1)
+    arr.splice(1, 0, last[0])
+    // console.log(arr) // [ 'aa', '11', 'bb', 'cc', 'dd' ]
+}
+
+
+// Q98
+{
+    // console.log(null < 1)  // true
+    // console.log(null > 1)  // false
+    // console.log(null < -1)  // false
+    // console.log(null > -1)  // true
+    // console.log(null < 0)  // false
+    // console.log(null <= 0)  // true
+    // console.log(null >= 0)  // true
+    // console.log(null > 0)  // false
+    // console.log(null == 0)  // false
+    // console.log(null === 0)  // false
+    // nullは0と解釈されるため、1より小さく、-1より大きい。
+    // 0以下であるが0より小さくはない。
+    // 0以上であっても0より大きくはない。
+}
+
+
+// Q99
+{
+    let obj = {
+        a: undefined,
+        b: 'hello'
+    }
+
+    // if(('a' in obj)){console.log('a', ('a' in obj))} //true //true
+    // if(('c' in obj)){console.log('c', ('c' in obj))} //false //false
+
+    // if(obj.a){console.log(obj.a)} //undefined //false
+    // if(obj.b){console.log(obj.b)} //hello     //true
+    // if(obj.c){console.log(obj.c)} //undefined //false
+}
+
+
+// Q100
+{
+    let arr = [10, 20]
+    // console.log(1 in arr) //true
+    // console.log(2 in arr) //false
+}
+
+
+
+
