@@ -63,3 +63,55 @@
     // target = 0
     // console.log(target == null) //false
 }
+
+
+// Q106
+{
+    let value = 0
+    let target = value || 10
+    // console.log(target) //10
+
+    let target2 = (value !== undefined) ? value : 10;
+    // console.log(target2) //0
+}
+
+
+// Q107
+{
+    let arr = []
+    // console.log(arr.length !== 0) //true
+}
+
+
+// Q108
+{
+    let obj = {}
+    // console.log(obj ? true: false) //true
+    // console.log(Object.keys(obj).length != 0 ? true: false) //false
+}
+
+
+// Q109
+{
+    // forとforEachの処理の違い
+    // for →　returnで返り値を返し、処理を終える
+    // forEach　→　受け取った関数の全ての要素を処理するまで終わらない。retrunした場合、次の要素処理が実行される
+
+    //配列のどれか1つに条件を満たす評価をしたい場合はArray.someを使用する
+    const lessThan10 = (n) => n < 10;
+    // console.log(lessThan10(5)) //true
+    // console.log(lessThan10(11)) //false
+    // console.log([1, 2, 3, 4, 5].some(lessThan10)) //true
+    // console.log([1, 2, 3, 4, 5, 12].some(lessThan10)) //true
+    // console.log([12, 13, 15].some(lessThan10)) //false
+}
+
+
+// Q110
+{
+    const arr = ['a', 'b', 'c']
+    // console.log(Object.getOwnPropertyNames(arr)) //[ '0', '1', '2', 'length' ]
+
+    const obj = {'a': 1, 'b': 3, 'c': 5}
+    // console.log(Object.getOwnPropertyNames(obj)) //[ 'a', 'b', 'c' ]
+}
