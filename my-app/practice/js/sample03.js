@@ -115,3 +115,58 @@
     const obj = {'a': 1, 'b': 3, 'c': 5}
     // console.log(Object.getOwnPropertyNames(obj)) //[ 'a', 'b', 'c' ]
 }
+
+
+// Q111
+{
+    let o = {}
+    Object.defineProperty(o, 'name', {
+        value: 'taro',
+        writable: false, //書き換え可能か
+        configurable: false, //削除可能か
+        enumerable: false //列強可能か
+    });
+    // console.log(o.name) //taro
+    // o.name = 'hana'
+    // console.log(o.name) //taro
+    // console.log(Object.keys(o)) // [] 　not→['name']
+    // delete(o.name)
+    // console.log(o.name) //taro
+}
+
+
+// Q112
+{
+    // import * as math from 'math'
+    // import {sum, pi} from 'math'
+    // console.log(math.sum(1, 3))
+    // console.log(math.pi)
+
+    // https://qiita.com/s-yoshida/items/af23897e096e3e18e765
+    // https://qiita.com/hagevvashi/items/8b4a7d3061bddd3b340e
+}
+
+
+// Q113
+{
+    const index = ['a', 'bb', 'ccc'].findIndex(x => x == 'ccc')
+    // console.log(index) //2
+    const objIndex = [{name: "aa"}, {name: "bb"}, {name: "cc"}].findIndex(x => x.name == "bb")
+    // console.log(objIndex) //0
+}
+
+
+// Q114
+{
+    const r = ['A','B','C'].map(x => Array.of(x))
+    // console.log(r) //[ [ 'A' ], [ 'B' ], [ 'C' ] ]
+    const r2 = ['A','B','C'].map(x => [x])
+    // console.log(r2) //[ [ 'A' ], [ 'B' ], [ 'C' ] ]
+}
+
+
+// Q115
+{
+ const r = ['a', 'b', 'c'].fill('target', 1, 3)
+//  console.log(r) //[ 'a', 'target', 'target' ]
+}
