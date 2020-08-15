@@ -170,3 +170,55 @@
  const r = ['a', 'b', 'c'].fill('target', 1, 3)
 //  console.log(r) //[ 'a', 'target', 'target' ]
 }
+
+
+// Q116
+{
+    const r = [3, 0, 6, -1].find(x => x > 0)
+    // console.log(r) //3
+
+    const r2 = [3, 0, 6, -1].find(x => x < 0)
+    // console.log(r2) //-1
+}
+
+
+// Q117
+{
+    function* idMaker(){
+        let i = 0;
+        while(true)
+            yield i++;
+    }
+
+    const g = idMaker();
+    // console.log(g.next().value); //0 ← { value: 0, done: false }
+    // console.log(g.next().value); //1
+    // console.log(g.next().value); //2
+}
+
+
+// Q118
+{
+ let s = new String('foo')
+//  console.log(s.length); //3 → オブジェクトが持つプロパティにアクセス
+ let s2 = 'foo'
+//  console.log(s2.length); //3 → 文字列プリミティブをオブジェクトとしてアクセス。内部に一時的にラッパーオブジェクトを呼び、オブジェクトにアクセス。その後破棄。
+ //プリミティブ値・・・文字列、数字、真偽値などtypeofの評価でobjectを返さないもの
+}
+
+
+// Q119
+{
+    //null → プロパティは設定しているものの、値の初期値として値が入っていないことを明示する際にnullを入れる。
+    //undefined → 存在自体がない
+}
+
+
+// Q120
+{
+    let v = null;
+    // console.log(typeof v) //object
+    // console.log(v == undefined) //true
+    // console.log(v === undefined) //false
+    // console.log(v === null) //true
+}
