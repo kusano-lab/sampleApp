@@ -222,3 +222,79 @@
     // console.log(v === undefined) //false
     // console.log(v === null) //true
 }
+
+
+// Q121
+{
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/Comparison_Operators
+    // 等価演算子は、2 つのオペランドが同じ型でないならばオペランドを変換して、それから厳密な比較を行います。
+    // 両方のオペランドがオブジェクトならば、 JavaScript は内部参照を比較するので、オペランドがメモリ内の同じオブジェクトを参照するときに等しくなります。
+
+    let o1 = {'key': 'value'}
+    let o2 = {'key': 'value'}
+    let o3 = o1
+    // console.log(o1 == o2) //false
+    // console.log(o1 == o3) //true
+    // console.log('o1', o1, 'o2', o2, 'o3', o3) //o1 { key: 'value' } o2 { key: 'value' } o3 { key: 'value' }
+    // o3.key = 'value2'
+    // console.log(o1 == o3) //true
+    // console.log('o1', o1, 'o2', o2, 'o3', o3) //o1 { key: 'value2' } o2 { key: 'value' } o3 { key: 'value2' }
+}
+
+
+// Q122
+{
+    // let fragment = document.createDocumentFragment();
+    // for(let i=0; i<10; i++){
+    //     let child = document.createElement('div')
+    //     fragment.appendChild(child)
+    // }
+
+    // document.getElementById('parent').appendChild(fragment);
+
+    // https://developer.mozilla.org/ja/docs/Web/API/Document/createDocumentFragment
+    // https://developer.mozilla.org/ja/docs/Web/API/DocumentFragment
+}
+
+
+// Q123
+{
+    // XHTMLにscriptタグを記述する際のCDATAタグの書き方
+    // <script>
+    // <![CDATA[
+    //    //something・・・ 
+    // ]]>
+    // </script>
+
+    // h2タグ
+    // &lt;h2&gt;
+
+    // '
+    // &quot;
+
+    // &
+    // &amp;
+}
+
+
+// Q124
+{
+    let dom = '&lt;h2&gt; This is an H2 &lt;/h2&gt;'
+    let dom2 = dom.replace(/&(.*?);/g, (e)=>{
+        switch(e){
+            case '&lt;':
+                return '<'
+            case '&gt;':
+                return '>'
+        }
+    })
+    // console.log(dom2) //<h2> This is an H2 </h2>
+}
+
+
+// Q125
+{
+    let s = 'My name is Taro Suzuki and I am a researcher at ABC.';
+    // console.log(s.match(/\ba\w*\b/g))
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+}
