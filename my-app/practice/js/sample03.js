@@ -298,3 +298,54 @@
     // console.log(s.match(/\ba\w*\b/g))
     // https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 }
+
+
+// Q126
+{
+    const s = '<img src="sample.com">'
+    const s2 = '<p>'
+
+    const r = /<(?:\S+)(?:\s+.+)?>/ // :?でキャプチャしないようにできる
+    // console.log(s.match(r))
+}
+
+
+// Q127
+{
+    let re = /apple*/g
+    let s = 'bbappleccddappleee'
+
+    // let array = re.exec(s)
+    let array
+    // console.log(re.exec(s))
+    while( (array = re.exec(s)) !== null ){
+        // console.log(array)
+        let msg = `${array[0]} を見つけました。`
+        msg += `次のマッチは ${re.lastIndex}からです`
+        // console.log(msg)
+    }
+}
+
+
+// Q128
+{
+    const s = 'washable reasonable accessible assemble answerable';
+    // console.log(s.match(/\b\w+(?=able\b)/g))
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions#special-lookahead
+}
+
+
+// Q129
+{
+    const s = 'ケンジは昭和55年生まれの35歳であり、ケンジの母は昭和22年生まれの64歳である'
+    // console.log(s.match(/\d+(?![年\d])/g))
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions#special-negated-look-ahead
+}
+
+
+// Q130
+{
+    const s = 'わたしの名前は「もりた」です。あだなは「もりけん」です';
+    const re = /(「(.*?)」)/ig;
+    // console.log(s.match(re))
+}
