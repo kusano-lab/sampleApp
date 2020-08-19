@@ -349,3 +349,39 @@
     const re = /(「(.*?)」)/ig;
     // console.log(s.match(re))
 }
+
+
+// Q131
+{
+    const s = 'わたしの名前は「もりた」です。あだなは「もりけん」です';
+    const re = /「(.+?)」/ig
+    let r;
+    while(( r = re.exec(s)) !== null){
+        // console.log(r.index, r[0], 'ここ')
+    }
+    // 7 '「もりた」' 'ここ'
+    // 19 '「もりけん」' 'ここ'
+}
+
+
+// Q133
+{
+    const tag = '<div><h1>hoge</h1></div>';
+    const tag2 = '<div><h1>hoge</h></div>';
+    // console.log(/<(\w+)><(\w+)>hoge<\/\2><\/\1>/.test(tag)) //true
+    // console.log(/<(\w+)><(\w+)>hoge<\/\2><\/\1>/.test(tag2)) //false
+}
+
+
+// Q134
+{
+    let a = [2, 3,-1, -6, 0, -108, 42, 10];
+    // console.log(a.sort()) //[ -1, -108, -6, 0, 10, 2, 3, 42 ]
+
+    // console.log(a.sort((x, y) => {
+    //     // return x - y 
+    //     if(x < y) return -1;
+    //     if(x > y) return 1;
+    //     return 0;
+    // })) //[ -108, -6, -1, 0, 2, 3, 10, 42 ]]
+}
