@@ -364,6 +364,19 @@
 }
 
 
+// Q132
+{
+    const s = 'あの客はよく柿食う客だ';
+    const s2 = 'あの客はよく柿食う人だ';
+    const s3 = 'あの友達はよく柿食う友達だ';
+    const s4 = 'あの親友はよく柿食う友達だ';
+    // console.log(s.match(/あの(.+)はよく柿食う\1だ/))
+    // console.log(s2.match(/あの(.+)はよく柿食う\1だ/)) //null
+    // console.log(s3.match(/あの(.+)はよく柿食う\1だ/))
+    // console.log(s4.match(/あの(.+)はよく柿食う\1だ/)) //null
+}
+
+
 // Q133
 {
     const tag = '<div><h1>hoge</h1></div>';
@@ -384,4 +397,39 @@
     //     if(x > y) return 1;
     //     return 0;
     // })) //[ -108, -6, -1, 0, 2, 3, 10, 42 ]]
+}
+
+
+// Q135
+{
+    // const i = document.getElementById();
+    // i.parentNode.tagName
+    // i.childNodes
+    // i.firstChild
+}
+
+
+// Q136
+{
+    // let w = docuemnt.getElementById('wrap');
+    // let t = document.getElementById('nested');
+    // w.removeChild(t);
+}
+
+
+// Q137
+{
+    // let node = document.getElementById('nested')
+    // if(node.parentNode){
+    //     node.parendNode.removeChild(node)
+    // }
+}
+
+
+// Q138
+{
+    // let wrap = document.getElementById('top')
+    // while (wrap.firstChild) {
+    //     wrap.removeChild(wrap.firstChild)
+    // }
 }
