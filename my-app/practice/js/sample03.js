@@ -433,3 +433,48 @@
     //     wrap.removeChild(wrap.firstChild)
     // }
 }
+
+
+// Q139
+{
+    //Object.prototype汚染
+    Object.prototype.bar = 1
+    var foo = {goo: undefined}
+
+    // foo.bar; //1
+    // 'bar' in foo //true
+
+    // foo.hasOwnProperty('bar'); // false
+    // foo.hasOwnProperty('goo'); // true
+}
+
+
+// Q140
+{
+    for(var i in foo){
+        // console.log(i) // goo bar
+        // console.log(foo.hasOwnProperty(i)) // true false
+    }
+}
+
+
+// Q141
+{
+    // mapとweakmapの違い
+    // https://gist.github.com/think49/31a2cedb5c653fd18086ade669c04323
+}
+
+
+// Q142
+{
+    let arr = [0, 0, 0]
+    // console.log(arr)  //[ 0, 0, 0 ]
+    // console.log(arr.fill(7, 1)) //[ 0, 7, 7 ]
+}
+
+
+// Q143
+{
+    // let t = document.querySelector('#targetID')
+    // getComputedStyle(t, ':before').content //contentの内容
+}
