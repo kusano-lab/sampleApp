@@ -478,3 +478,58 @@
     // let t = document.querySelector('#targetID')
     // getComputedStyle(t, ':before').content //contentの内容
 }
+
+
+// Q144
+{
+    // if(window.matchMedia('(min-width:400)').matches){
+    //     //400px以上
+    // }else{
+    //     //400px未満
+    // }
+}
+
+
+// Q145
+{
+    let num = 12345.678910;
+    // console.log(num.toFixed()) //12346
+    // console.log(num.toFixed(2)) //12345.68
+    let num2 = 123.45678;
+    // console.log(num2.toFixed()) //123
+    //四捨五入
+}
+
+
+// Q146
+{
+    var s = 'global'
+    const hoge = () => {
+        // console.log(s) //undefined 変数宣言の巻き上げで解釈されるため
+        // ここで var s = 'local' とする場合と同じ意味になる
+        if(true){
+            var s = 'local'
+            // console.log(s) //local
+        }
+    }
+
+    hoge();
+    // console.log(s) //global
+
+}
+
+
+// Q147
+{
+    const s = 'global'
+    const hoge = () => {
+        // console.log(s) //global
+        if(true){
+            const s = 'local'
+            // console.log(s) //local
+        }
+    }
+
+    hoge();
+    // console.log(s) //global
+}
