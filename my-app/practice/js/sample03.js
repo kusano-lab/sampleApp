@@ -533,3 +533,32 @@
     hoge();
     // console.log(s) //global
 }
+
+
+// Q148
+{
+    let list = document.querySelectorAll('.hoge')
+    // let arr = [...list]
+    // let arr2 = Array.from(list)
+    // let arr3 = Array.prototype.map.call(list, obj => obj)
+    // let arr4 = [].map.call(list, obj => obj)
+}
+
+
+// Q149, Q150
+{
+    // (1)
+    // <div id="target">
+    // (2)
+    // <span>既存の内容</span>
+    // (3)
+    // </div>
+    // (4)
+    // const t = document.getElementById('target')
+    // const dom = '<p>子要素</p>'
+    // t.insertAdjacentHTML('beforebegin', dom) // (1)
+    // t.insertAdjacentHTML('afterbegin', dom) // (2)
+    // t.insertAdjacentHTML('beforeend', dom) // (3)
+    // t.insertAdjacentHTML('afterend', dom) // (4)
+    // https://developer.mozilla.org/ja/docs/Web/API/Element/insertAdjacentHTML
+}
