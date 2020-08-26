@@ -106,3 +106,86 @@
     //window.onload（load）は全てのloadが終わったタイミングで発火する
     //DOMContentloadはDOM解析が終わってDOMに触れれるようになったら発火する　→ 画像読み込み前に実行可能。画像の幅などの処理にはloadを使用する
 }
+
+
+// Q161
+{
+    // addEventListener('DOMcontentLoad', function(){something}, 第三引数true/false)
+    // https://qiita.com/hosomichi/items/49500fea5fdf43f59c58
+
+    // useCapture（デフォルトfalse）
+    //trueの場合、内側要素（子）をクリックした時、実行順番が異なる
+}
+
+
+// Q162
+{
+    // <div class='classA'>
+    //     <div>some1</div>
+    //     <p><div>some2</div></p>
+    //     <div>some3</div>
+    // </div>
+
+    // const classA = document.getElementsByClassName('classA')
+    // const result = Array.prototype.filter.call(classA, function(classA){
+    //     return classA.nodeName === 'DIV'
+    // });
+
+    // result instanceof Array
+}
+
+
+// Q163
+{
+    // <div class="fafa"><span></span></div>
+    // <div class="fafa"><span></span></div>
+    // <div class="fafa"><span></span></div>
+    // <div class="fafa"><span></span></div>
+
+    //for文でNodeListを使うのを避ける方法
+    // const tag = document.getElementsByTagName('span')
+    // const array = Array.prototype.slice.call(tag)
+    // console.log(array instanceof Array)
+}
+
+
+// Q164
+{
+    // <div id="main">
+    //     <p class="content">
+    //         <a class="link" href="http://kenjimorita.jp">
+    //         1st Link
+    //     </a>
+    //         <p class="dummy"></p>
+    //         <p class="content">
+    //         <a href="http://example.com/">2link</a>
+    //         </p>
+    //         <p class="content">
+    //         <a href="http://example.com/">3link</a>
+    //         </p>
+    //         <a href="http://example.com/">5th</a>
+    //     </div>
+
+    // const result = document.evaluate(
+    //     '//div[@id="main"]/p[contains(@class,"content")][3]/a[starts-with(@href,"http://example.com")]',
+    //     document,
+    //     null,
+    //     XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+    //     null
+    // );
+    
+    // console.log(result.snapshotLength) //1
+    // var elem = result.snapshotItem(0);
+    // console.log(elem.innerHTML);
+}
+
+
+// Q165
+{
+    // <div id="target" class="foo-after" onClick="toggleStyle()">click here!</div>
+    // const target = document.getElementById('target');
+    // target.onclick = function toggleStyle(){
+    //     this.classList.toggle('foo-after')
+    //     this.classList.toggle('foo-before')
+    // }
+}
