@@ -189,3 +189,65 @@
     //     this.classList.toggle('foo-before')
     // }
 }
+
+
+// Q166
+{
+    const s = " fafa fafa eee ";
+    // console.log(s.trim().split(' ')) //[ 'fafa', 'fafa', 'eee' ]
+}
+
+
+// Q167
+{
+    const s = "abcdefg"
+    const obj = Object.prototype.valueOf.call(s)
+    // console.log(obj)
+}
+
+
+// Q168
+{
+    const s = 'abcdefg';
+    // console.log([...s]) //[ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
+    // console.log(Array.prototype.slice.call(s)) //[ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
+}
+
+
+// Q169
+{
+    const s = "apple banana orenge";
+    const arrayed = s.split(" ")
+
+    const obj = {}
+    arrayed.forEach(function(e, i){
+        obj[i] = e
+    })
+
+    // console.log(obj) //{ '0': 'apple', '1': 'banana', '2': 'orenge' }
+
+    const map = new Map();
+    const obj2 = {}
+    arrayed.forEach((e, i) => {
+       return map.set(i, e)
+    })
+
+    // console.log(map) //Map { 0 => 'apple', 1 => 'banana', 2 => 'orenge' }
+
+    const arr = []
+    for(value of arrayed.entries()){
+        arr.push(value)
+    }
+    const map2 = new Map(arr)
+    // console.log(map2) //Map { 0 => 'apple', 1 => 'banana', 2 => 'orenge' }
+}
+
+
+// Q170
+{
+    const add = (a = 1, b = 2) => (a + b)
+
+    // console.log(add()) //3
+    // console.log(add(2)) // 4
+    // console.log(add(2, 3)) //5
+}
