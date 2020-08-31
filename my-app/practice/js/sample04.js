@@ -251,3 +251,108 @@
     // console.log(add(2)) // 4
     // console.log(add(2, 3)) //5
 }
+
+
+// Q171
+{
+    let flg = true;
+    const func = () => {
+        console.log('func')
+    }
+    
+    // if(flg){
+    //     func();
+    // }
+
+    // flg && func();
+    
+}
+
+
+// Q172
+{
+    // for (var i=0; i<5; i++) {
+    //     setTimeout(function(){
+    //         // console.log('i', i);
+    //     }, 1000 * (i+1));
+    // }
+    // // 5が5回出力される
+
+    // //ok
+    // var temp = 0;
+    // for (var i=0; i<5; i++) {
+    //     setTimeout(function(){
+    //         // console.log('temp', temp);
+    //         temp++;
+    //     }, 1000 * (i+1));
+    // }
+
+    // //ok
+    // for (let j=0; j<5; j++) {
+    //     setTimeout(function(){
+    //         // console.log('j', j);
+    //     }, 1000 * (j+1));
+    // }
+
+    // //ok
+    // for (var k=0; k<5; k++) {
+    //     (function(num){
+    //         setTimeout(function(){
+    //             // console.log('num', num);
+    //         }, 1000 * (k+1));
+    //     })(k);
+    // }
+}
+
+
+// Q173
+{
+    const origin = {name: 'taro', age: 80}
+    const obj = origin
+    obj.age = '30'
+    // console.log(origin) //{ name: 'taro', age: '30' }
+    // console.log(obj) //{ name: 'taro', age: '30' }
+    // console.log(JSON.stringify(origin)) //{"name":"taro","age":"30"}
+    const obj2 = JSON.parse(JSON.stringify(origin))
+    obj2.age = '50'
+    // console.log(origin) //{ name: 'taro', age: '30' }
+    // console.log(obj2) //{ name: 'taro', age: '50' }
+}
+
+
+// Q174
+{
+    const getKey = (key) => {
+        return `a key named ${key}`
+    }
+
+    const obj = {
+        id: 1,
+        name: 'taro',
+        [getKey('enabled')]: true
+    }
+
+    // console.log(obj) //{ id: 1, name: 'taro', 'a key named enabled': true }
+}
+
+
+// Q175
+{
+    const name = 'taro';
+    const address = 'tokyo';
+
+    const obj = {
+        id: 1,
+        name : name,
+        address: address
+    }
+
+    const obj2 = {
+        id: 2,
+        name,
+        address
+    }
+
+    // console.log(obj) //{ id: 1, name: 'taro', address: 'tokyo' }
+    // console.log(obj2) //{ id: 2, name: 'taro', address: 'tokyo' }
+}
