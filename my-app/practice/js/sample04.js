@@ -356,3 +356,77 @@
     // console.log(obj) //{ id: 1, name: 'taro', address: 'tokyo' }
     // console.log(obj2) //{ id: 2, name: 'taro', address: 'tokyo' }
 }
+
+
+// Q176
+{
+    // const foo = document.querySelector('.foo')
+    // const nodes = Array.from(foo)
+}
+
+
+// Q177
+{
+    // [[0, 1], [2, 3], [4,5]] → [0, 1, 2, 3, 4, 5]
+    // let flat = {}
+    const arr = [[0, 1], [2, 3], [4,5]]
+    const a = arr.reduce((pre, current, index, array) => {
+        // console.log('pre', pre)
+        // console.log('current', current)
+        // console.log('index', index)
+        // console.log('array', array)
+        return pre.concat(current)
+    })
+
+    // console.log(a) //[ 0, 1, 2, 3, 4, 5 ]
+
+    //[...[0, 1], ...[2, 3], ...[4,5]]
+}
+
+
+// Q178
+{
+    //bad
+    const foo = function() {
+
+    }
+
+    //good
+    //コールスタックに識別しやすくされている
+    //アロー関数が使用できる
+    function hoge() {
+
+    }
+}
+
+
+// Q179
+{
+    const currentUser = true
+    if (currentUser) {
+        function test() {
+        //   console.log('Nope.');
+        }
+    }
+
+    let test;
+    if (currentUser) {
+        test = () => {
+            // console.log('Yup.');
+        };
+    }
+    //関数宣言はステートメントではない
+}
+
+
+// Q180
+{
+    function concatenateAll() {
+        const args = Array.prototype.slice.call(arguments);
+        return args.join('');
+    }
+    // console.log(concatenateAll('a', 'b', 'c'))
+
+    const concatenateAll2 = (...args) => args.join('')
+    // console.log(concatenateAll2('a', 'b', 'c'))
+}
