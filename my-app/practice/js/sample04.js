@@ -430,3 +430,60 @@
     const concatenateAll2 = (...args) => args.join('')
     // console.log(concatenateAll2('a', 'b', 'c'))
 }
+
+
+// Q181
+{
+    //NG アンチパターン
+    function f1(obj){
+        obj.key = 1;
+    }
+
+    // パラメータとして渡されたオブジェクトを操作すると、元の呼び出し側で不要な変数副作用を引き起こす可能性があります。
+    function f2(obj){
+        const key = Object.prototype.hasOwnProperty.call(obj, 'key') ? obj.key : 1;
+    }
+}
+
+
+// Q182
+{
+    // const foo = a ? a : b;
+    // const bar = c ? true : false;
+    // const baz = c ? false : true;
+
+    // const foo = a || b
+    // const bar = !!c
+    // const baz = !c
+}
+
+
+// Q183
+{
+    // NG
+    // const foo = {clark: 'kent'};
+    // space: eslintのobject-curly-spacing / jscsのrequireSpacesInsideObjectBrackets
+
+    // OK
+    const foo = { clark: 'kent' };
+}
+
+
+// Q184
+{
+    const createAddress = (address, tyoume = address + '-1', banch = tyoume + '-10') => {
+        return [address, tyoume, banch]
+    }
+
+    // console.log(createAddress('meguro'))
+}
+
+
+// Q185
+{
+    //f() → 6
+    const f = ([x, y] = [1, 2], {z: z} = {z: 3}) => {
+        return x + y + z;
+    }
+    // console.log( f() ) //6
+}
