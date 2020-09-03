@@ -482,8 +482,114 @@
 // Q185
 {
     //f() → 6
+    // ObjectDestructuring?
     const f = ([x, y] = [1, 2], {z: z} = {z: 3}) => {
         return x + y + z;
     }
     // console.log( f() ) //6
+}
+
+
+// Q186
+{
+    var people = [
+        { name: "ken",
+          family: {
+           mother: "jone Smith"
+          },
+         age: 24
+        },
+        { name: "jun",
+          family: {
+           mother: "jone jun"
+          },
+         age: 27
+    }];
+
+    for(var { name: n, family: {mother: f} } of people){
+        // console.log(`name ${n}, mother ${f}`)
+    }
+    // name ken, mother jone Smith
+    // name jun, mother jone jun
+}
+
+
+// Q187
+{
+    var metadata = {
+        title: 'Scratchpad',
+        translations: [
+         {
+           locale: 'de',
+           localization_tags: [],
+           last_edit: '2016-07-18',
+           url: 'kenjimorita.jp',
+           title: 'JavaScript'
+          }
+        ],
+         url: 'kenjimorita.jp/JavaScript'
+    };
+
+    var {title: englishTitle, translations: [{title: localeTitle}]} = metadata;
+    // console.log('englishTitle', englishTitle) //englishTitle Scratchpad
+    // console.log('localeTitle', localeTitle) //localeTitle JavaScript
+}
+
+
+// Q188
+{
+    // old
+    // function drawES5Chart(options) {
+    //     options = options === undefined ? {} : options;
+    //     var size = options.size === undefined ? 'big' : options.size;
+    //     var cords = options.cords === undefined ? { x: 0, y: 0 } : options.cords;
+    //     var radius = options.radius === undefined ? 25 : options.radius;
+    //     console.log(size, cords, radius);
+    // }
+    // drawES5Chart({
+    //     cords: { x: 18, y: 30 },
+    //     radius: 30
+    // });
+    
+
+    //ECMAScript2015
+    const drawES6Chart = ({size = 'big', cords = {x: 0, y: 0}, radius = 25} = {}) => {
+        // console.log(size, cords, radius)
+    }
+
+    drawES6Chart({
+        cords: {x: 18, y: 30},
+        radius: 30
+    })
+    // big { x: 18, y: 30 } 30
+}
+
+
+// Q189
+{
+    // NodeList → Array
+    // querySelectorAll('.child')やdocument.getElementsByTagName('div')
+
+    // const nodeList = document.querySelectorAll('.child')
+
+    // Array.from(nodeList)
+
+    // Array.prototype.slice.call(nodeList)
+
+    // [...nodeList]
+
+    // Object.keys(nodeList).forEach(function(key){
+    //     console.log(nodeList[key])
+    // })
+}
+
+
+// Q190
+{
+    // const add = () => this.x //NG アロー関数ではうまくいかない
+    function add(){ return this.x}
+    // console.log( add() ) //undefined
+
+    var obj = {x: 5}
+    // console.log( add.apply(obj) ) //5
 }
