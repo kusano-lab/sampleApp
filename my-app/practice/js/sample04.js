@@ -593,3 +593,68 @@
     var obj = {x: 5}
     // console.log( add.apply(obj) ) //5
 }
+
+
+// Q191
+{
+    function add(y, z){
+        console.log(this.x, y+z)
+    }
+
+    // add.apply({x: 3}, [5, 6]) //3 11
+
+    // add.call({x: 3}, 5, 6) //3 11
+}
+
+
+// Q192
+{
+    var int = 8;
+    var module = {
+     int: 4,
+     fn : function(){return this.int;}
+    }
+
+    // console.log(module.fn()) //4
+
+    var fnn = module.fn.bind({int: 8}) //8
+    // console.log(fnn())
+}
+
+
+// Q193
+{
+    function list() {
+        return Array.prototype.slice.call(arguments)
+    }
+
+    // console.log(list(2, 3, 4)) //[ 2, 3, 4 ]
+
+    var bindList = list.bind(null, 1)
+    // console.log(bindList(2, 3, 4)) //[ 1, 2, 3, 4 ]
+}
+
+
+// Q194
+{
+    // var list = document.getElementById('list')
+    // var fragment = document.createDocumentFragment()
+    // var array = ["Internet Explorer", "Mozilla Firefox", "Safari", "Chrome", "Opera"]
+    // var node = array.forEach(function(elem){
+    //     var li = document.createElement('li')
+    //     li.textContent = elem
+    //     fragment.appendChild(li)
+    // })
+
+    // list.appendChild(fragment)
+    //全てのブラウザで利用可能
+    //返り値はDocumentFragmentへの参照。メモリ上に存在
+    //DOMツリーに追加するのではないのでリフローが行われない
+}
+
+
+// Q195
+{
+    // var str = str.replace(/(?:\r\n|\r|\n)/g, '<br>')
+    // https://gist.github.com/kenmori/1961ce0140dc3307a0e641c8dde6701d
+}
