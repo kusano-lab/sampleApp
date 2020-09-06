@@ -658,3 +658,40 @@
     // var str = str.replace(/(?:\r\n|\r|\n)/g, '<br>')
     // https://gist.github.com/kenmori/1961ce0140dc3307a0e641c8dde6701d
 }
+
+
+// Q196
+{
+    const {a, b} = {a: 1, b: 2}
+    // console.log('a', a) // a 1
+    // console.log('b', b) // b 2
+}
+
+
+// Q197
+{
+    // ローカルストレージとセッションストレージ
+    // ・ローカルストレージ
+    // 　→ブラウザに保存される
+    // 　→他のタブでも共有される、保存したデータは他のタグで即座に参照可能。ページ更新後も残る
+
+    // ・セッションストレージ
+    // 　→異なるタブなら異なるsessionストレージ
+    // 　→同一タブ内なら保存は維持される
+}
+
+
+// Q198
+{
+    // localStorage.foo = 'fooooooooo'
+    // // localStorage.foo
+
+    // localStorage.setItem('foo', 'fafa')
+    // localStorage.getItem('foo')
+
+    // localStorage.removeItem('foo')
+    // localStorage.clear()
+
+    // var key = localStorage.key(0)
+    // console.log(`${key}のストレージは${localStorage[key]}`)
+}
