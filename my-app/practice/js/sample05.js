@@ -94,3 +94,74 @@
     // }
     // foo(1,2,3,4,5) //[ 1, 2, 3, 4, 5 ]
 }
+
+
+// Q206
+{
+    //  SomeClass.prototype.someMethod = function (arg1, arg2){
+
+    //  }
+    //  SomeClass.prototype.anotherMethod = function (){
+
+    //  }
+
+
+    // Object.assign(SomeClass.prototype, {
+    //     someMethod(arg1, arg2){
+
+    //     },
+    //     anotherMethod(){
+
+    //     }
+    // })     
+}
+
+
+// Q207
+{
+    // const proto = Object.defineProperty({}, 'prop', {
+    //     writable: false,
+    //     configurable: true,
+    //     value: 123,
+    // });
+
+    // const obj = Object.create(proto)
+    // // obj.prop = 789//NG
+    // Object.defineProperty(obj, 'prop', {value: 456})
+    // console.log(obj.prop) //456 
+}
+
+
+// Q208
+{
+    // var locationsearch = '?id=12345&category=script&isname=true';
+    // var result = {}
+    // locationsearch.substring(1).split('&').forEach(function(ele, i){
+    //     var key = ele.split('=')
+    //     result[key[0]] = decodeURIComponent(key[1])
+    // })
+}
+
+
+// Q209
+{
+    // const arr = [1,1,'a','a']
+    // const uniq = arr.filter(function(x, i, arr){
+    //     return arr.indexOf(x) === i;
+    // })
+}
+
+
+// Q210
+{
+    // const today = new Date()
+    // const Day = today.getTime()
+    // const start = new Date(2016, 7, 27, 0, 0, 0)
+    // const SDay = start.getTime()
+    // const end = new Date(2016, 8, 11, 0, 0, 0)
+    // const EDay = end.getTime()
+
+    // const target = document.getElementById('target')
+
+    // SDay <= Day && EDay >= Day target.innerHTML += 'セール中'
+}
