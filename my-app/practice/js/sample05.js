@@ -165,3 +165,46 @@
 
     // SDay <= Day && EDay >= Day target.innerHTML += 'セール中'
 }
+
+
+// Q211
+{
+    const arr = [[1,2],[],[3]]
+    const flatArr = Array.prototype.concat.apply([], arr)
+    // console.log(flatArr) //[ 1, 2, 3 ]
+    // console.log([...arr[0], ...arr[1], ...arr[2]]) //[ 1, 2, 3 ]
+}
+
+
+// Q212
+{
+    const arr = [];
+    for (var i=0; i < 3; i++) {
+        arr.push(() => i);
+    }
+    for (let i=0; i < 3; i++) {
+        arr.push(() => i);
+    }
+    // console.log( arr.map(x => x()) ); // [ 3, 3, 3, 0, 1, 2 ]
+}
+
+
+// Q213
+{
+    const entries = [
+        ['yes', 'ja'],
+        ['no', 'nein'],
+        ['perhaps', 'vielleicht'],
+    ];
+
+    // const content = document.getElementsByTagName('content')
+    // for(let [src, target] of entries){
+    //     content.inserAdjacentHTML('beforeend', '<div id=$"{src}">src</div>')
+    //     document.getElementById(src).addEventListener(
+    //         'click', (event) => {
+    //             event.preventDefault();
+    //             alert(target)
+    //         }
+    //     )
+    // }
+}
