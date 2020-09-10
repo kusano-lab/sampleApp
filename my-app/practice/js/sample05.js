@@ -208,3 +208,58 @@
     //     )
     // }
 }
+
+
+// Q214
+{
+    // const foo = 'outer';
+    // function bar(func = x => foo) {
+    //     const foo = 'inner';
+    //     console.log(func());
+    // }
+    // bar(); //outer
+}
+
+
+// Q215
+{
+    class Faa {
+        constructor(name){
+            this.name = name
+        }
+        speak(){
+            console.log(this.name)
+        }
+    }
+
+    class Faaaa extends Faa {
+        constructor(name){
+            super();
+            this.name = name
+        }
+        getSpeak(){
+            super.speak()
+        }
+    }
+
+    const f = new Faa('taro')
+    // f.speak() //taro
+
+    const fa = new Faaaa('hiro')
+    // fa.speak()    //hiro
+    // fa.getSpeak() //hiro
+}
+
+
+// Q216
+{
+    //NG
+    function clone(orig) {
+        return Object.assign({}, orig);
+    }
+
+    function clone(orig) {
+        const origProto = Object.getPrototypeOf(orig)
+        return Object.assign(Object.create(origProto), orig)
+    }    
+}
