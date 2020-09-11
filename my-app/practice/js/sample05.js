@@ -263,3 +263,51 @@
         return Object.assign(Object.create(origProto), orig)
     }    
 }
+
+
+// Q217
+{
+    // Generator methods
+    // class IterableArgs {
+    //     constructor(...args){
+    //         this.args = args;
+    //     }
+    //     * [Symbol.iterator](){
+    //         for (const arg of this.args){
+    //             yield arg;
+    //         }
+    //     }
+    // }
+
+    // for (const x of new IterableArgs('hello', 'world')) {
+    //     console.log(x)
+    // }
+
+    //hello
+    // world
+}
+
+
+// Q218
+{
+    // var dimension = function(radius, height){
+    //     var d = radius * radius * Math.PI
+    //     return d * height / 3
+    // }(10, 20)
+    
+    // console.log(dimension) //2094.3951023931954
+}
+
+
+// Q219
+{
+    // var obj = {
+    //     width: 20
+    // }
+    // if(!!obj.height){
+    //     console.log(obj.height)
+    // }else{
+    //     console.log('heightが定義されていません')
+    // }
+    // console.log(!!obj.height) //false
+}
