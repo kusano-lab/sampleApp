@@ -311,3 +311,48 @@
     // }
     // console.log(!!obj.height) //false
 }
+
+
+// Q220
+{
+    const add = (x, y) => (x + y)
+    const multiply = (x, y) => (x * y)
+    // console.log(add(1, 2)) //3
+    // console.log(multiply(2, 3)) //6
+
+    const withLoging = (func) => {
+        return function(x, y){
+            let result = func(x, y)
+            console.log('result', result)
+            return result
+        }
+    }
+
+    var addLog = withLoging(add)
+    // addLog(5, 10) //result 15
+
+    var multiplyLog = withLoging(multiply)
+    // multiplyLog(2, 6) //result 12
+}
+
+
+// Q221
+{
+    const arr = [1, 2, 3]
+    // console.log(arr) //[1, 2, 3 ]
+    const newArr = Array.prototype.slice.call(arr, 1)
+    // console.log(newArr) //[ 2, 3 ]
+
+    // const h1s = document.querySelectorAll('h1')
+    // const newH1s = Array.prototype.slice.call(h1s, 1)
+}
+
+
+// Q222
+{
+    const a = 'aabbccdde1e23ffgg'
+    const b = 'aabbccddee123ffgg'
+    // console.log(a.search(/\d/)) //9
+    // console.log(b.search(/\d/)) //10
+    // console.log(a.search(/\d/) < b.search(/\d/)) //true
+}
