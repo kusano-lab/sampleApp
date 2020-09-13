@@ -356,3 +356,36 @@
     // console.log(b.search(/\d/)) //10
     // console.log(a.search(/\d/) < b.search(/\d/)) //true
 }
+
+
+// Q223
+{
+    const div = '<div>about me</div>';
+    const textArr = []
+    // console.log(/\<div\>(.+)\<\/div\>/.exec(div)[1]) //about me
+
+    textArr.push(/\<div\>(.+)\<\/div\>/.exec(div)[1])
+    // console.log(textArr) //[ 'about me' ]
+}
+
+
+// Q224
+{
+     var i = 0
+     var arr = []
+    //  do {
+    //      arr.push(Math.pow(2, i))
+    //      i += 1
+    //  } while(i < 10)
+    //  console.log(arr)
+}
+
+
+// Q225, Q226, Q227
+{
+    const d = new Date('1980/8/1 5:55')
+    // console.log(d) //1980-07-31T20:55:00.000Z
+    // console.log(d.toLocaleString()) //1980-8-1 05:55:00
+    // console.log(d.toString()) //Fri Aug 01 1980 05:55:00 GMT+0900 (GMT+09:00)
+    // console.log(d.toLocaleTimeString()) //05:55:00
+}
