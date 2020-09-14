@@ -389,3 +389,59 @@
     // console.log(d.toString()) //Fri Aug 01 1980 05:55:00 GMT+0900 (GMT+09:00)
     // console.log(d.toLocaleTimeString()) //05:55:00
 }
+
+
+// Q228
+{
+    const arr = ['aaa', 'bbb', 'ccc'];
+    arr.unshift('000')
+    // console.log(arr) // [ '000', 'aaa', 'bbb', 'ccc' ]
+}
+
+
+// Q229
+{
+    const arr = [0, 1, 2, 3 , 4, 5, 6, 7, 8, 9, 10];
+    const newArr = arr.filter(e => {
+        if(e % 3 !== 0 && e % 2 !== 0 ) return e
+    })
+    console.log(newArr) // [ 1, 5, 7 ]
+}
+
+
+// Q230, Q231
+{
+    // 標準オブジェクト
+    // https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects
+    // 値プロパティ
+    // ・Infinity
+    // ・NaN
+    // ・undefined
+    // ・null リテラル
+
+    // 関数プロパティ
+    // eval()
+    //   ※ uneval() 
+    // isFinite()
+    // isNaN()
+    // parseFloat()
+    // parseInt()
+    // decodeURI()
+    // decodeURIComponent()
+    // encodeURI()
+    // encodeURIComponent()
+    //   bad escape() 
+    //   bad unescape() 
+}
+
+
+// Q232
+{
+    const url = 'https://tools.ietf.org/html/rfc2822#page-14';
+    // console.log(encodeURIComponent(url))
+    // → https%3A%2F%2Ftools.ietf.org%2Fhtml%2Frfc2822%23page-14
+
+    // console.log(encodeURI(url))
+    // → https://tools.ietf.org/html/rfc2822#page-14
+    // (;、 :、 /、 @、？、 &、 %、 $、 #、 =、 + 、 ,)はエンコードしない
+}
