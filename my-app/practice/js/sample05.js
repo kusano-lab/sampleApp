@@ -323,7 +323,7 @@
     const withLoging = (func) => {
         return function(x, y){
             let result = func(x, y)
-            console.log('result', result)
+            // console.log('result', result)
             return result
         }
     }
@@ -405,7 +405,7 @@
     const newArr = arr.filter(e => {
         if(e % 3 !== 0 && e % 2 !== 0 ) return e
     })
-    console.log(newArr) // [ 1, 5, 7 ]
+    // console.log(newArr) // [ 1, 5, 7 ]
 }
 
 
@@ -444,4 +444,37 @@
     // console.log(encodeURI(url))
     // → https://tools.ietf.org/html/rfc2822#page-14
     // (;、 :、 /、 @、？、 &、 %、 $、 #、 =、 + 、 ,)はエンコードしない
+}
+
+
+// Q233
+{
+    const s = 'aaa,bbb,ccc,ddd';
+    const newS = s.replace(/,/g, '/') //aaa/bbb/ccc/ddd
+    // console.log(newS)
+}
+
+
+// Q234
+{
+    const s = 'aaa<div>bbb</div>ccc<div>ddd</div>eee';
+    const re = /<div>(.*?)<\/div>/g
+    let arr;
+
+
+    while((arr = re.exec(s)) !== null){
+        console.log(arr[0].replace(/<\/*div>/g, ''))
+    }
+    // bbb
+    // ddd
+}
+
+
+// Q235
+{
+    let arr = Array(10).fill(0).map((v, i) => i + 1)
+    // console.log(arr) //[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+    let arr2 = Array(10).fill(0).map((v, i) => Math.pow(2, (i + 1)))
+    // console.log(arr2) //[ 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024 ]
 }
