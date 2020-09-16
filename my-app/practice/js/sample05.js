@@ -463,7 +463,7 @@
 
 
     while((arr = re.exec(s)) !== null){
-        console.log(arr[0].replace(/<\/*div>/g, ''))
+        // console.log(arr[0].replace(/<\/*div>/g, ''))
     }
     // bbb
     // ddd
@@ -477,4 +477,26 @@
 
     let arr2 = Array(10).fill(0).map((v, i) => Math.pow(2, (i + 1)))
     // console.log(arr2) //[ 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024 ]
+}
+
+
+// Q236
+{
+    const temp = new Date();
+    temp.setMonth(1, 30)
+    temp.setDate(temp.getDate() + 1)
+
+    const arr = []
+    // console.log(temp.getMonth())
+    // console.log(temp.getDate())
+    while(!(temp.getMonth() == 1 && temp.getDate() == 1)){
+        let reCnt = arr[temp.getMonth() + 1]
+        arr[temp.getMonth() + 1] = temp.getDate()
+        if(reCnt === undefined){
+            temp.setDate(28)            
+        }else{
+            temp.setDate(temp.getDate() + 1)
+        }
+    }
+    // console.log(arr) //[ <1 empty item>, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
 }
