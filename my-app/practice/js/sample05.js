@@ -500,3 +500,64 @@
     }
     // console.log(arr) //[ <1 empty item>, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]
 }
+
+
+// Q237
+{
+`
+同一制限ポリシー（same origin policy）の制限を受けるもの4つ
+・XMLHttpRwquest
+・Canvas
+・WebStrage
+・X-Frame-Options
+
+オリジンの参照
+location.origin
+document.origin
+
+制限を受けないもの
+cookie
+HTTP認証
+document.domainを書き換えてのinnerHTMLの読み書き
+
+//以下はlocationプロパティ
+//例: http://www.google.com:80/search?q=devmo#test
+host - www.google.com:80
+hostname - www.google.com
+href - http://www.google.com:80/search?q=devmo#test
+pathname - /search (ホストからの相対)
+protocol - http:
+search = ?q=devmo
+hash - #test
+
+//用語
+スキーム : http,https
+同一オリジン : スキーム,ホスト,ポートが同じこと
+クロスオリジン : 上記がいずれか一つでも違うこと
+セッションハイジャック : サーバーから渡されるセッションIDを盗み正規ユーザーになりすますこと
+`
+}
+
+// Q238
+{
+`
+location.assign　と location.replace　の違い
+
+replaceは画面繊維をwebブラウザの履歴に残さず遷移する
+
+`
+}
+
+
+// Q239
+{
+    var Person = {
+        say: function(){
+            console.log('my name is' + this.name + '。' + '職業は' + this.job + 'です');
+        }
+    }
+    
+    var taro = Object.create(Person, {name :{value: 'taro' }});
+    var copy  = Object.create(taro, {job: {value: 'JavascriptEngneer'}});
+    copy.say()
+}
