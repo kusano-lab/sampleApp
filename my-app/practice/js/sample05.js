@@ -602,3 +602,62 @@ Object.defineProperty
 ※ 既存のプロパティは上書き
 `
 }
+
+
+// Q243
+{
+    let n = '124'
+    // console.log(n) // 124
+    // console.log(+n) // 124
+    // console.log(parseInt(n, 10)) // 124
+
+    n = ''
+    // console.log(n) // ''
+    // console.log(+n) // 0
+    // console.log(parseInt(n, 10)) // NaN
+}
+
+
+// Q244
+{
+    const n = {value: 0}
+
+    if(n.value){
+        // console.log('hello true')
+    }else {
+        // console.log('hello false')
+    }
+    // hello false
+
+    if(n.value != null){
+        // console.log('hello true')
+    }
+    // hello true
+
+    // console.log(undefined == null) //true
+    // console.log(false == null) //false
+    // console.log(0 == null) //false
+    // console.log(0 == false) //true
+    // console.log(0 == undefined) //false
+    // console.log(false == undefined) //false
+}
+
+
+// Q245
+{
+    const o = { 
+        f: function(){
+            // console.log('hello')
+        }
+    }
+
+    if(o){
+        if(o.f){
+            o.f()
+        }
+    }
+    // hello
+
+    o && o.f && o.f();
+    // hello
+}
