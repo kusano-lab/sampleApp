@@ -559,5 +559,46 @@ replaceは画面繊維をwebブラウザの履歴に残さず遷移する
     
     var taro = Object.create(Person, {name :{value: 'taro' }});
     var copy  = Object.create(taro, {job: {value: 'JavascriptEngneer'}});
-    copy.say()
+    // copy.say() //my name istaro。職業はJavascriptEngneerです
+}
+
+
+// Q240
+{
+    function Constructor() {}
+    // const o = new Constructor();
+
+    // const o = Object.create(Constructor.prototype)
+}
+
+
+// Q241
+{
+    var o = Object.create({}, {p: {value: 32, writable: true, enumerable: true, configurable: true}})
+    // console.log(o) //32
+
+    o.p = 11;
+    // console.log(o) //11
+}
+
+
+// Q242
+{
+`
+Object.create
+第一引数： 任意のオブジェクトのprototypeを渡す
+第二引数： 自身がもつプロパティディスクリプションを定義する
+return： 上記で継承したインスタンスを返す
+
+Object.definePropertyes
+第一引数： プロパティをsetする対象オブジェクト
+第二引数： プロパティ名
+return： 定義したいディスクリプタをハッシュオブジェクトとして渡す
+※ 既存プロパティは上書き。各種設定のdefaultはfalse
+
+Object.defineProperty
+第一引数： プロパティをsetする対象オブジェクト
+第二引数： プロパティのキーとしてディスクリプタをもつオブジェクト
+※ 既存のプロパティは上書き
+`
 }
