@@ -661,3 +661,36 @@ Object.defineProperty
     o && o.f && o.f();
     // hello
 }
+
+
+// Q246, Q247
+{
+    var v = 'a';
+    var n = +v || 0;
+
+    // console.log(+v) //NaN
+    // console.log(n) //0
+
+    v = 3.55
+    var i = v | 0
+    // console.log(i) //3
+}
+
+
+// Q248
+{
+    function Emp(){}
+
+    var insEmp1 = new Emp();
+    var insEmp2 = new Emp();
+    console.log(insEmp1) //Emp {}
+    insEmp2.name = 'taro';
+    
+    console.log(insEmp1.name) //undefined
+    console.log(insEmp2.name) //taro
+
+    Emp.prototype.name = 'hiro'
+
+    console.log(insEmp1.name) //hiro
+    console.log(insEmp2.name) //taro
+}
