@@ -683,14 +683,49 @@ Object.defineProperty
 
     var insEmp1 = new Emp();
     var insEmp2 = new Emp();
-    console.log(insEmp1) //Emp {}
+    // console.log(insEmp1) //Emp {}
     insEmp2.name = 'taro';
     
-    console.log(insEmp1.name) //undefined
-    console.log(insEmp2.name) //taro
+    // console.log(insEmp1.name) //undefined
+    // console.log(insEmp2.name) //taro
 
     Emp.prototype.name = 'hiro'
 
-    console.log(insEmp1.name) //hiro
-    console.log(insEmp2.name) //taro
+    // console.log(insEmp1.name) //hiro
+    // console.log(insEmp2.name) //taro
+}
+
+
+// Q249
+{
+    var m = new Map();
+    // console.log(m) // Map {}
+`
+・Objectのkeyはstring型、Mapは任意の型を指定できる
+・Objectのsizeは手動で調べる必要がある、MapはMap.size()
+・Objectの反復は順番を保証しない,Mapの反復は要素の挿入順
+・Objectはデフォルトでプロパティを持つ(var map = Object.create(null)で回避できる)
+
+ObjectかMapか、使うべきところ
+Mapを使う
+・実行時までキーが不明な時、全てのkeyが同じ型の時、全ての値が同じ型の時、
+
+Objectを使う
+・個々の要素に操作できるロジックがある時
+`
+}
+
+
+// Q250
+{
+`
+破壊的なメソッド
+・pop
+・push
+・reverse
+・shift
+・sort
+・splice
+・unshift
+`
 }
