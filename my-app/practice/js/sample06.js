@@ -56,3 +56,46 @@ this呼び出し4つとthisの参照の参照先オブジェクト
  → グローバルオブジェクト
 `
 }
+
+
+// Q254
+{
+    var obj = { foo: 'bar', baz: 42 }; 
+    var map = new Map(Object.entries(obj))
+    // console.log(map) //Map { 'foo' => 'bar', 'baz' => 42 }
+}
+
+
+// Q256
+{
+    let color = 'black'
+
+    const printBlack = () => (console.log('black'))
+    const printRed = () => (console.log('red'))
+    const printBlue = () => (console.log('blue'))
+    const printYellow = () => (console.log('yellow'))
+    
+    const colorObj = {
+        'black': printBlack,
+        'red': printRed,
+        'blue': printBlue,
+        'yellow': printYellow
+    }
+
+    // if(color in colorObj) colorObj[color]() //black
+}
+
+
+// Q257
+{
+    // ['a','b','c'] → {0: 'a', 1: 'b', 2: 'c'}
+    const toObj = (arr) => {
+        const obj = {};
+        for(var i = 0; i < arr.length; i++){
+            obj[i] = arr[i]
+        }
+        return obj
+    }
+
+    // console.log(toObj(['a','b','c'])) //{ '0': 'a', '1': 'b', '2': 'c' }
+}
