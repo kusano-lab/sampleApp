@@ -86,7 +86,7 @@ this呼び出し4つとthisの参照の参照先オブジェクト
 }
 
 
-// Q257
+// Q257 
 {
     // ['a','b','c'] → {0: 'a', 1: 'b', 2: 'c'}
     const toObj = (arr) => {
@@ -99,3 +99,45 @@ this呼び出し4つとthisの参照の参照先オブジェクト
 
     // console.log(toObj(['a','b','c'])) //{ '0': 'a', '1': 'b', '2': 'c' }
 }
+
+
+// Q258
+{
+    let html = []
+    const count = 10;
+    for(var i=0; i<count; i++){
+        html.push('hei!!')
+        // html += 'hei!!' こちらより配列でjoinした方が高速になる
+    }
+    // document.querySelector('#hoge').innerHTML = html.join('')
+    //'hei!!hei!!hei!!hei!!hei!!hei!!hei!!hei!!hei!!hei!!'
+}
+
+
+// Q259
+{
+    function iterateTimerOver(){
+        const funcTimer = Timer; //参照を代入
+        const length = 100;
+        for (let i = 0; i < length; i++){
+          // Timer();//グローバル関数を実行するより高速
+          funcTimer()
+        }
+    }
+
+    // for (var i=0; i<list.length; i++){
+    // }
+
+    // 高速
+    // const num = list.length;
+    // for (var i=0; i<num; i++){
+    // }
+    
+    // this.props → {name, sex, age, live}
+    // const {name, sex, age, live} = this.props
+    // name
+}
+
+
+// Q260
+{}
