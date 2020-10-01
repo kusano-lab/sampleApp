@@ -140,4 +140,30 @@ this呼び出し4つとthisの参照の参照先オブジェクト
 
 
 // Q260
-{}
+{
+    const myObj  = {1: ['e', 'ee', 'eee'], 2: ['f', 'ff','fff']};
+    // console.log(myObj)
+
+    const newArr = Object.keys(myObj).map(ele => {
+        return myObj[ele]
+    })
+    // console.log(newArr) //[ [ 'e', 'ee', 'eee' ], [ 'f', 'ff', 'fff' ] ]
+   
+
+    const newArr2 = Object.values(myObj)
+    // console.log(newArr2) //[ [ 'e', 'ee', 'eee' ], [ 'f', 'ff', 'fff' ] ]
+    // ECMAScript2017 → polifill
+}
+
+
+// Q261
+{
+    const arr = ['a', 'b', 'c']
+    const obj = arr.reduce((o, v, i) => {
+        o[i] = v
+        return o
+        // return o, v, i
+    }, {})
+
+    // console.log(obj) //{ '0': 'a', '1': 'b', '2': 'c' }
+}
